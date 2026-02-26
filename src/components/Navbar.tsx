@@ -39,16 +39,16 @@ const Navbar = () => {
       initial="hidden"
       animate="visible"
       variants={navVariants}
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[90%] md:w-[85%] max-w-6xl px-6 md:px-10 py-2 md:py-3 bg-[var(--color-vanta)]/40 backdrop-blur-md rounded-full border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]"
+      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[90%] md:w-[85%] max-w-6xl px-6 md:px-10 py-1 md:py-1.5 bg-[var(--color-vanta)]/40 backdrop-blur-md rounded-full border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]"
     >
       <div className="flex items-center">
         <Link href="/">
           <Image
             src="/logo.webp"
             alt="Trajectory Logo"
-            width={100}
-            height={100}
-            className="w-14 h-14 md:w-24 md:h-24 object-contain"
+            width={120}
+            height={120}
+            className="w-12 h-12 md:w-18 md:h-18 object-contain"
           />
         </Link>
       </div>
@@ -84,14 +84,6 @@ const Navbar = () => {
               }`}
               layoutId="nav-hover"
             />
-          </Link>
-        </motion.div>
-        <motion.div variants={itemVariants}>
-          <Link
-            href="./src/app/login"
-            className="px-4 md:px-6 py-1.5 md:py-2 text-sm md:text-lg font-bold text-[var(--color-vanta)] bg-[var(--color-primary)] rounded-full hover:bg-[var(--color-secondary)] hover:text-[var(--color-accent)] transition-all duration-300 shadow-[0_0_10px_var(--color-primary)] hover:shadow-[0_0_20px_var(--color-secondary)]"
-          >
-            Login
           </Link>
         </motion.div>
       </div>

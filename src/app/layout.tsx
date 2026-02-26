@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Trajectory 2k26",
   description: "Mechanical Revolution Fest",
+  icons: {
+    icon: "/logo.webp",
+  },
 };
 
 export default function RootLayout({
