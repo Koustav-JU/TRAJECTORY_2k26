@@ -14,27 +14,21 @@ const EventTimelineSection = () => {
   const events = [
     {
       day: "Day 1",
-      date: "April 2, 2026",
-      title: "Opening Ceremony!",
-      desc: "Get ready for a day of fun and games, and meet your fellow participants.",
+      date: "March 23, 2026",
+      title: "Opening Genesis",
+      desc: "The ignition of innovaton. Join us for the grand inauguration, keynote sessions, and high-octane networking with mechanical pioneers.",
     },
     {
       day: "Day 2",
-      date: "April 3, 2026",
-      title: "Hardware Showdown!",
-      desc: "Learn how to build your own AR/VR hardware from scratch.",
+      date: "March 24, 2026",
+      title: "The Forge & Think-Tank",
+      desc: "A combined powerhouse session: witness intense hardware crafting in the Showdown while tackling complex engineering puzzles in the Brainstorming arena.",
     },
     {
       day: "Day 3",
-      date: "April 4, 2026",
-      title: "Brainstorming!",
-      desc: "Engage in a quiz debate and collaborative sessions to generate innovative ideas.",
-    },
-    {
-      day: "Final Night",
-      date: "April 4, 2026",
-      title: "Closing Ceremony",
-      desc: "Closing ceremony and awards presentation. Celebrate your achievements with your team!",
+      date: "March 25, 2026",
+      title: "Final Reckoning",
+      desc: "The culmination of three days of brilliance. Closing ceremony, winner unveilings, and the grand awards presentation.",
     },
   ];
 
