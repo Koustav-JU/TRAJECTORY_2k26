@@ -102,17 +102,17 @@ const Card = ({
     className={cn(
       "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl",
       // light styles
-      "from-amber-600 to-amber-400 bg-linear-to-tr border-x-2 border-y-2 border-amber-900 shadow-[15px_15px_10px_rgba(255,165,0,0.2)] hover:from-amber-400 hover:to-amber-600 hover:bg-linear-to-tr ease-in-out duration-300 transform-gpu transition-all hover:shadow-[15px_15px_10px_rgba(255,165,0,0.7)]",
+      "from-blue-600 to-black bg-linear-to-tr border-x-2 border-y-2 border-blue-900 shadow-[15px_15px_10px_rgba(0,0,255,0.2)] hover:from-black hover:to-blue-600 hover:bg-linear-to-tr ease-in-out duration-300 transform-gpu transition-all hover:shadow-[15px_15px_10px_rgba(0,0,255,0.3)]",
       className,
     )}
   >
     <div >{background}</div>
     <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-3">
       <Icon className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75" />
-      <h3 className="text-xl font-semibold text-neutral-900">
+      <h3 className="text-xl font-semibold text-red-50">
         {name}
       </h3>
-      <p className="max-w-lg text-neutral-900">{description}</p>
+      <p className="max-w-lg text-red-50">{description}</p>
     </div>
 
     <div

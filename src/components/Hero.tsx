@@ -33,7 +33,7 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/robot-human-silhouettes.webp"
+          src="/bg-new.webp"
           alt="Dystopian Hero Background"
           fill
           className="object-cover opacity-60"

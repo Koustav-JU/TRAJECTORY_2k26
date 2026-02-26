@@ -46,7 +46,7 @@ const AbtPage = () => {
 
       {/* background */}
         <Image
-        src="/robot-human-silhouettes.webp"
+        src="/bg-new.webp"
         alt="background"
         fill
         className="object-cover opacity-20 blur-xs"
