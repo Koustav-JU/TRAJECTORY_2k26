@@ -86,6 +86,22 @@ const Navbar = () => {
             />
           </Link>
         </motion.div>
+        <motion.div variants={itemVariants} className="relative group">
+          <Link
+            href={"/events"}
+            className={`relative z-10 px-4 py-2 text-sm md:text-lg font-medium transition-colors duration-300 group-hover:text-[var(--color-primary)] ${
+              isActive("/events") ? "text-[var(--color-primary)]" : "text-[var(--color-accent)]"
+            }`}
+          >
+            Events
+            <motion.div
+              className={`absolute inset-0 bg-white/5 rounded-full -z-10 transition-opacity duration-300 ${
+                isActive("/events") ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+              }`}
+              layoutId="nav-hover"
+            />
+          </Link>
+        </motion.div>
       </div>
     </motion.nav>
   );
