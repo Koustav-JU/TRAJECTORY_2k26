@@ -97,11 +97,11 @@ const EventCard = ({ event }: EventCardProps) => {
         <div>
           {/* Date & Team */}
           <div className="flex items-center gap-6 mb-5 font-mono text-[10px] text-white/30">
-            <span>
+            <span className="text-xs">
               <span className="text-primary/60">DATE: </span>
               {event.date}
             </span>
-            <span>
+            <span className="text-xs">
               <span className="text-primary/60">TEAM: </span>
               {event.teamSize}
             </span>

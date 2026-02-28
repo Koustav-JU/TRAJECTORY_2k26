@@ -108,7 +108,7 @@ const Hero = () => {
           className="flex flex-col md:flex-row gap-8 justify-center items-center"
         >
           <Link
-            href="/#explore"
+            href={"/events"}
             className="group relative w-full sm:w-auto px-10 md:px-12 py-4 md:py-5 text-xl md:text-2xl font-black text-vanta bg-primary rounded-none hover:bg-secondary hover:text-accent transition-all duration-300 shadow-[0_0_30px_var(--color-primary)] hover:shadow-[0_0_50px_var(--color-secondary)] uppercase tracking-widest clip-path-polygon"
           >
             Explore Events
