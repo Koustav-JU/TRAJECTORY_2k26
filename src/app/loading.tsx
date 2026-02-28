@@ -4,16 +4,17 @@ import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 export default function Loading() {
-  const [loadingText, setLoadingText] = useState("INITIALIZING_SYSTEM");
+  const [loadingText, setLoadingText] = useState("INITIALIZING_MECHANISM");
   const texts = [
-    "SYNCING_NEURAL_LINK",
-    "INITIALIZING_QUANTUM_CORE",
-    "CONGESTED_NODE_DETECTED",
-    "REROUTING_UPLINK",
-    "CALIBRATING_LOAD_BALANCER",
-    "ESTABLISHING_CYBER_VORTEX",
-    "CONNECTED_TO_SINGULARITY",
-  ];
+  "FORGING_ANALYSIS_PIPELINE",
+  "ACTIVATING_CNC_ROUTINE",
+  "INITIATING_HYDRAULIC_SEQUENCE",
+  "LOAD_TEST_SEQUENCE_STARTED",
+  "THERMAL_EXPANSION_MODELING",
+  "MECHANICAL_SYSTEMS_DIAGNOSTICS",
+  "STRUCTURAL_INTEGRITY_SCAN",
+  "KINEMATIC_CHAIN_ANALYSIS",
+];
 
   useEffect(() => {
     let i = 0;
@@ -23,9 +24,9 @@ export default function Loading() {
     }, 800);
     return () => clearInterval(interval);
   }, []);
-
+  
   return (
-    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black font-mono overflow-hidden">
+    <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-black font-mono overflow-hidden">
       {/* Background Grid Effect */}
       <div className="absolute inset-0 opacity-10 pointer-events-none" 
            style={{ 
@@ -38,7 +39,7 @@ export default function Loading() {
       <motion.div 
         animate={{ top: ["0%", "100%", "0%"] }}
         transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-        className="absolute left-0 right-0 h-[2px] bg-primary/50 shadow-[0_0_15px_var(--color-primary)] z-10 pointer-events-none"
+        className="absolute left-0 right-0 h-0.5 bg-primary/50 shadow-[0_0_15px_var(--color-primary)] z-10 pointer-events-none"
       />
 
       <div className="relative z-20 flex flex-col items-center">
@@ -66,7 +67,7 @@ export default function Loading() {
         {/* Loading Text with Glitch Effect */}
         <div className="flex flex-col items-center gap-2">
           <div className="text-accent text-sm tracking-[0.3em] uppercase opacity-50 mb-1">
-            Accessing Terminal...
+            Transferring Ambitions...
           </div>
           <motion.div 
             key={loadingText}
@@ -86,7 +87,7 @@ export default function Loading() {
             initial={{ left: "-100%" }}
             animate={{ left: "100%" }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-0 bottom-0 w-1/3 bg-gradient-to-r from-transparent via-primary to-transparent"
+            className="absolute top-0 bottom-0 w-1/3 bg-linear-to-r from-transparent via-primary to-transparent"
           />
         </div>
       </div>
