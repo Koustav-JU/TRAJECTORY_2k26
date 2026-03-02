@@ -1,7 +1,7 @@
 
 
 import { motion } from "framer-motion";
-
+import Image from "next/image";
 export interface Card{
         id: string,
         title:string,
@@ -23,22 +23,25 @@ const MarqueeCard = ({event}: CardProps) => {
       transition={{ duration: 0.3 }}
     >
       {/* Top Bar Decoration */}
-      <div className="absolute top-0 left-0 w-full h-[2px] bg-white/5 group-hover:bg-primary/30 transition-colors duration-500" />
+      <div className="absolute top-0 left-0 w-full h-0.5 bg-white/5 group-hover:bg-primary/30 transition-colors duration-500" />
 
       {/* Ghost Number Background */}
-      <div className="absolute -right-4 -bottom-4 text-[10rem] font-black text-white/[0.02] group-hover:text-primary/[0.04] transition-colors duration-700 select-none leading-none">
+      <div className="absolute -right-4 -bottom-4 text-[5rem] lg:text-[10rem] font-black text-white/[0.02] group-hover:text-primary/[0.04] transition-colors duration-700 select-none leading-none">
         {event.index + 1}
       </div>
 
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none"
-        style={{
-          backgroundImage: `${event.image}`,
-          backgroundSize: "40px 40px",
-        }}
-      />
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[85%] h-[8rem] lg:h-[14rem] rounded-sm overflow-hidden border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.4)] group-hover:shadow-[0_0_30px_rgba(0,229,255,0.25)] transition-all duration-500 mt-8">
 
+  <Image
+    src={`/${event.image}.webp`}
+    alt={event.title}
+    fill
+    className="object-cover transition-transform duration-700 group-hover:scale-105"
+  />
+    <div className="absolute bottom-3 left-3 w-5 h-5 border-l border-b border-primary/60" />
+    <div className="absolute top-3 right-3 w-5 h-5 border-r border-t border-primary/60" />
+</div>
+      
       {/* Scanline animation */}
       <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
         <div
@@ -48,52 +51,35 @@ const MarqueeCard = ({event}: CardProps) => {
       </div>
 
       {/* Corner Accents */}
-      <div className="absolute top-3 left-3 w-3 h-3 border-l border-t border-primary/60" />
-      <div className="absolute bottom-3 right-3 w-3 h-3 border-r border-b border-primary/60" />
+      <>
+        <div className="absolute top-3 left-3 w-3 h-3 border-l border-t border-primary/60" />
+        <div className="absolute bottom-3 right-3 w-3 h-3 border-r border-b border-primary/60" />
+      </>
 
       {/* Shimmer sweep on hover */}
-      <div className="absolute top-0 left-[-100%] w-full h-full bg-linear-to-r from-transparent via-white/[0.04] to-transparent group-hover:left-[100%] transition-all duration-1000 pointer-events-none z-10" />
+      <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/4 to-transparent group-hover:left-full transition-all duration-1000 pointer-events-none z-10" />
 
       {/* Content */}
       <div className="relative z-20 p-8 flex flex-col h-full justify-between">
         {/* Header */}
         <div>
           {/* ID Badge row */}
-          <div className="flex items-center justify-between mb-5">
+          <div className="flex flex-col lg:flex-row items-center justify-between mb-5">
             <div
               className="inline-flex items-center justify-center border border-white/10 px-3 py-1 backdrop-blur-sm relative"
               style={{ boxShadow: `inset 0 0 20px ${event.color}11` }}
             >
-              <span className="text-[10px] font-mono text-white/70 tracking-[0.2em]">
+              <span className="text-[7px] lg:text-[10px] font-mono text-white/70 tracking-[0.2em]">
                 {event.id}
               </span>
-              <div className="absolute -top-[3px] -left-[3px] w-2 h-2 border-l border-t border-primary" />
-              <div className="absolute -bottom-[3px] -right-[3px] w-2 h-2 border-r border-b border-primary" />
-            </div>
-
-
-          {/* Title */}
-          <h3 className="text-2xl md:text-3xl font-black text-white mb-4 uppercase tracking-tight group-hover:translate-x-2 transition-transform duration-500">
-            {event.title}
-          </h3>
+              <div className="absolute -top-0.75 -left-0.75 w-2 h-2 border-l border-t border-primary" />
+              <div className="absolute -bottom-0.75 -right-0.75 w-2 h-2 border-r border-b border-primary" />
+          </div>
 
           {/* Description */}
-          <p className="text-white/70 text-sm leading-relaxed group-hover:text-primary/80 transition-colors duration-500 line-clamp-3">
+          <p className="text-cyan-200/70 text-center text-[8px] lg:text-[14px] leading-relaxed group-hover:text-primary/80 transition-colors duration-500 line-clamp-3 ml-2">
             {event.description}
           </p>
-        </div>
-
-        {/* Footer */}
-        <div>
-          {/* Date & Team */}
-
-          {/* Bottom row */}
-          <div className="flex items-center justify-between">
-            <div className="font-mono text-[10px] text-white/20">
-              <span className="text-primary">00:00:</span>
-              {String(event.index * 7 + 13).padStart(2, "0")}
-            </div>
-          </div>
         </div>
       </div>
       </div>
