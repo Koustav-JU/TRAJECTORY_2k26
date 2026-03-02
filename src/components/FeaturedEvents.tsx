@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import toast from "react-hot-toast";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -7,6 +8,19 @@ gsap.registerPlugin(ScrollTrigger);
 
 const FeaturedEvents = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleClick = () => {
+    toast("🚧 Logs Will Be Accessible Soon!", {
+      duration: 3000,
+      style: {
+        borderRadius: "12px",
+        background: "#0f172a",
+        color: "#38bdf8",
+        border: "1px solid rgba(56,189,248,0.3)",
+      },
+    });
+  };
+
 
   useGSAP(() => {
     const cards = gsap.utils.toArray(".featured-card");
@@ -170,7 +184,7 @@ const FeaturedEvents = () => {
                 <div className="font-mono text-[8px] md:text-[10px] text-white/20">
                   <span className="text-primary">00:00:</span>{index < 3 ? '42' : '99'}
                 </div>
-                <button className="text-[8px] md:text-[10px] font-mono text-primary border border-primary/20 px-3 md:px-4 py-1.5 md:py-2 hover:bg-primary/10 transition-colors">
+                <button onClick={handleClick} className="hover:cursor-pointer text-[8px] md:text-[10px] font-mono text-primary border border-primary/20 px-3 md:px-4 py-1.5 md:py-2 hover:bg-primary/10 transition-colors">
                   ACCESS_LOGS
                 </button>
               </div>
