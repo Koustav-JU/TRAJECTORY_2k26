@@ -75,89 +75,115 @@ useEffect(() => {
 
   const events: Card[] = [
   {
-    id: "Event Number",
-    title: "Hello",
-    image: "/bg-new",
-    description: "hi my name is nothing. I just live",
+    id: "Inaugraiton Ceremony",
+    title: "",
+    image: "12",
+    description: "With Prof. Suman Chakraborty and Swarnendu Sen",
     index: 0,
     color: "rgba(255,255,255,0.6)",
   },
   {
-    id: "",
+    id: "Inaugration Ceremony",
     title: "",
-    image: "",
-    description: "",
+    image: "11",
+    description: "At Mechanical Engg. Bulding Seminar Hall",
     index: 1,
     color: "",
   },
   {
-    id: "",
+    id: "CaseCom",
     title: "",
-    image: "",
-    description: "",
+    image: "3",
+    description: "Want to showcase your presentaion skills, we’ve got you covered.",
     index: 2,
     color: "",
   },
   {
-    id: "",
+    id: "Robo League",
     title: "",
-    image: "",
-    description: "",
+    image: "4",
+    description: "Buckle up, as you got to flaunt your Mechatronics skills as well",
     index: 3,
     color: "",
   },
   {
-    id: "",
+    id: "Cricket",
     title: "",
-    image: "",
-    description: "",
+    image: "13",
+    description: "Even if you are our beloved Prof, we welcome you <3",
     index: 4,
     color: "",
   },
   {
-    id: "",
+    id: "Hoverpod",
     title: "",
-    image: "",
-    description: "",
+    image: "6",
+    description: "Ever heard of Amphibious Vehicles? Come over",
     index: 5,
     color: "",
   },
   {
-    id: "",
+    id: "Tarka Vitarka",
     title: "",
-    image: "",
-    description: "",
+    image: "14",
+    description: "Good at Debating? We might have something special for you",
     index: 6,
     color: "",
   },
   {
-    id: "",
+    id: "Model Matrix",
     title: "",
-    image: "",
-    description: "",
+    image: "8",
+    description: "Wow! You love designing? Then what are u waiting for?",
     index: 7,
     color: "",
   },
   {
-    id: "",
+    id: "Prot-egg-t",
     title: "",
-    image: "",
-    description: "",
+    image: "9",
+    description: "Save the falling egg from crashing. We'll be waiting...",
     index: 8,
     color: "",
   },
   {
-    id: "",
+    id: "Hydroblaster",
     title: "",
-    image: "",
-    description: "",
+    image: "2",
+    description: "Flex your Knowledge of Fluid Dynamics",
     index: 9,
     color: "",
   },
   
 ];
   return (
-    <div className="relative w-full h-[520px] flex items-center justify-evenly overflow-hidden bg-gradient-to-tr from-sky-900/30 via-sky-800/20 to-sky-700/10 backdrop-blur-3xl border border-sky-400/20 shadow-[0_0_30px_rgba(14,165,233,0.3)]">
+    <div
+  className="
+    relative w-full h-[520px]
+    flex items-center justify-evenly
+    overflow-hidden
+    bg-gradient-to-tr from-sky-900/30 via-sky-800/20 to-sky-700/10
+    backdrop-blur-3xl
+    shadow-[0_0_30px_rgba(14,165,233,0.3)]
+
+    border-t-2 border-b-2 border-sky-300/20
+
+    before:absolute before:top-0 before:left-0
+    before:h-full before:w-[2px]
+    before:bg-gradient-to-b
+    before:from-transparent before:via-sky-400 before:to-transparent
+    before:opacity-60
+
+    after:absolute after:top-0 after:right-0
+    after:h-full after:w-[2px]
+    after:bg-gradient-to-b
+    after:from-transparent after:via-sky-400 after:to-transparent
+    after:opacity-60
+  "
+  style={{
+    boxShadow: `0 0 120px rgba(14,165,233,0.25)`,
+  }}
+>
 
       {/* Ambient Glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -188,7 +214,7 @@ useEffect(() => {
         Previous <span className="font-extrabold text-cyan-400">Missions</span>
       </h2>
       <p className="mt-4 text-sky-400/70 max-w-2xl mx-auto">
-        Push your <span className="text-cyan-300 font-bold">LIMITS</span> with Brand new enhanced edition of <span className="text-cyan-500 font-bold">Trajectory_2k26</span>
+        Push your <span className="text-cyan-300 font-bold">LIMITS</span> with Brand new enhanced edition of <span className="text-cyan-500 font-bold">TRAJECTORY_2k26</span>
       </p>
     </div>
 
