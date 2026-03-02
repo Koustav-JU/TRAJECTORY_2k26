@@ -1,42 +1,24 @@
-"use client";
 
-import Footer from "@/components/Footer"
-import { motion } from "motion/react";
-import toast from "react-hot-toast";
 
-export interface EventData {
-  id: string;
-  title: string;
-  category: string;
-  desc: string;
-  date: string;
-  teamSize: string;
-  color: string;
-  index: number;
-  image:string;
+import { motion } from "framer-motion";
+
+export interface Card{
+        id: string,
+        title:string,
+        image: string,
+        description: string,
+        index: number,
+        color: string,
+    }
+
+interface CardProps{
+    event: Card;
 }
 
-interface EventCardProps {
-  event: EventData;
-}
-
-const EventCard = ({ event }: EventCardProps) => {
-
-  const handleClick = () => {
-    toast("🚧 Registration opens soon!", {
-      duration: 3000,
-      style: {
-        borderRadius: "12px",
-        background: "#0f172a",
-        color: "#38bdf8",
-        border: "1px solid rgba(56,189,248,0.3)",
-      },
-    });
-  };
-
+const MarqueeCard = ({event}: CardProps) => {
   return (
     <motion.div
-      className="group relative h-[420px] bg-[#0B0F1A] border border-white/5 rounded-none overflow-hidden transition-[border-color,box-shadow] duration-500 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(0,229,255,0.1)]"
+      className="group relative h-70 lg:h-90 w-40 lg:w-140 bg-[#0B0F1A] border border-white/5 rounded-none overflow-hidden transition-[border-color,box-shadow] duration-500 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(0,229,255,0.1)]"
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.3 }}
     >
@@ -52,7 +34,7 @@ const EventCard = ({ event }: EventCardProps) => {
       <div
         className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none"
         style={{
-          backgroundImage: `linear-gradient(${event.color}55 1px, transparent 1px), linear-gradient(90deg, ${event.color}55 1px, transparent 1px)`,
+          backgroundImage: `${event.image}`,
           backgroundSize: "40px 40px",
         }}
       />
@@ -89,14 +71,6 @@ const EventCard = ({ event }: EventCardProps) => {
               <div className="absolute -bottom-[3px] -right-[3px] w-2 h-2 border-r border-b border-primary" />
             </div>
 
-            {/* Category tag */}
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-[1px] bg-primary/40" />
-              <span className="text-primary font-mono text-[10px] tracking-widest uppercase">
-                {event.category}
-              </span>
-            </div>
-          </div>
 
           {/* Title */}
           <h3 className="text-2xl md:text-3xl font-black text-white mb-4 uppercase tracking-tight group-hover:translate-x-2 transition-transform duration-500">
@@ -105,23 +79,13 @@ const EventCard = ({ event }: EventCardProps) => {
 
           {/* Description */}
           <p className="text-white/70 text-sm leading-relaxed group-hover:text-primary/80 transition-colors duration-500 line-clamp-3">
-            {event.desc}
+            {event.description}
           </p>
         </div>
 
         {/* Footer */}
         <div>
           {/* Date & Team */}
-          <div className="flex items-center gap-6 mb-5 font-mono text-[10px] text-white/30">
-            <span className="text-xs">
-              <span className="text-primary/60">DATE: </span>
-              {event.date}
-            </span>
-            <span className="text-xs">
-              <span className="text-primary/60">TEAM: </span>
-              {event.teamSize}
-            </span>
-          </div>
 
           {/* Bottom row */}
           <div className="flex items-center justify-between">
@@ -129,15 +93,12 @@ const EventCard = ({ event }: EventCardProps) => {
               <span className="text-primary">00:00:</span>
               {String(event.index * 7 + 13).padStart(2, "0")}
             </div>
-            <button onClick={handleClick} className="hover:cursor-pointer text-[10px] font-mono text-primary border border-primary/20 px-4 py-2 hover:bg-primary/10 hover:border-primary/50 transition-colors duration-300">
-              REGISTER
-            </button>
           </div>
         </div>
       </div>
-      <Footer/>
+      </div>
     </motion.div>
   );
 };
 
-export default EventCard;
+export default MarqueeCard;

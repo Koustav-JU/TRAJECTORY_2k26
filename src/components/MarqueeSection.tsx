@@ -1,173 +1,225 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef, useState, useEffect } from "react";
+import MarqueeCard, {Card} from "./MarqueeCard";
+import { ChevronRightIcon, ChevronLeftIcon } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { usePathname } from "next/navigation";
 
-const topics = [
-  "Machine Design",
-  "Thermal Engineering",
-  "Fluid Mechanics",
-  "Structural Engineering",
-  "Control Systems",
-  "Signal Processing",
-  "Numerical Methods",
-  "Power Electronics",
-  "Digital Circuits",
-  "Heat Transfer",
+gsap.registerPlugin(ScrollTrigger);
+
+
+export default function MarqueeSection () {
+  const pathname = usePathname();
+  const containerRef = useRef(null);
+  const [active, setActive] = useState(5);
+
+  const next = () => {
+  setActive((prev) => (prev + 1) % 10);
+};
+
+const prev = () => {
+  setActive((prev) => (prev - 1 + 10) % 10);
+};
+
+
+  useGSAP(() => {
+  const cards = gsap.utils.toArray(".card");
+  const total = cards.length;
+
+  cards.forEach((card: any, index) => {
+    let offset = index - active;
+
+    if (offset > total / 2) offset -= total;
+    if (offset < -total / 2) offset += total;
+
+    gsap.to(card, {
+      x: offset * 60,
+      scale: 1 - Math.abs(offset) * 0.1,
+      opacity: 1 - Math.abs(offset) * 0.2,
+      zIndex: 100 - Math.abs(offset),
+      duration: 0.6,
+      ease: "power3.out"
+    });
+  });
+}, [active]);
+
+
+useEffect(() => {
+  gsap.to("#heading", {
+    y: -200,
+    opacity: 1,
+    duration: 1,
+    color: "rgba(0,0,255,0.6)",
+    scrollTrigger: {
+      trigger: "#heading",
+      start: "top 80%",
+    },
+    ease: "power2.out",
+  });
+
+  gsap.to("#cards", {
+    y:0,
+    opacity:1,
+    duration:2,
+    scrollTrigger:{
+      trigger:"#cards",
+      start: "top 90%",
+    },
+    ease: "power3.out",
+  });
+
+}, [pathname]);
+
+  const events: Card[] = [
+  {
+    id: "Event Number",
+    title: "Hello",
+    image: "/bg-new",
+    description: "hi my name is nothing. I just live",
+    index: 0,
+    color: "rgba(255,255,255,0.6)",
+  },
+  {
+    id: "",
+    title: "",
+    image: "",
+    description: "",
+    index: 1,
+    color: "",
+  },
+  {
+    id: "",
+    title: "",
+    image: "",
+    description: "",
+    index: 2,
+    color: "",
+  },
+  {
+    id: "",
+    title: "",
+    image: "",
+    description: "",
+    index: 3,
+    color: "",
+  },
+  {
+    id: "",
+    title: "",
+    image: "",
+    description: "",
+    index: 4,
+    color: "",
+  },
+  {
+    id: "",
+    title: "",
+    image: "",
+    description: "",
+    index: 5,
+    color: "",
+  },
+  {
+    id: "",
+    title: "",
+    image: "",
+    description: "",
+    index: 6,
+    color: "",
+  },
+  {
+    id: "",
+    title: "",
+    image: "",
+    description: "",
+    index: 7,
+    color: "",
+  },
+  {
+    id: "",
+    title: "",
+    image: "",
+    description: "",
+    index: 8,
+    color: "",
+  },
+  {
+    id: "",
+    title: "",
+    image: "",
+    description: "",
+    index: 9,
+    color: "",
+  },
+  
 ];
-
-// Duplicate topics to ensure smooth infinite scroll
-const marqueeItems = [...topics, ...topics, ...topics];
-
-const MarqueeRow = ({
-  items,
-  direction = "left",
-  speed = 20,
-  className = "",
-  itemClassName = "",
-  color = "#FFD580",
-}: {
-  items: string[];
-  direction?: "left" | "right";
-  speed?: number;
-  className?: string;
-  itemClassName?: string;
-  color?: string;
-}) => {
   return (
-    <div className={`flex overflow-hidden whitespace-nowrap ${className}`}>
-      <motion.div
-        className="flex gap-6 md:gap-10 py-2"
-        animate={{
-          x: direction === "left" ? "-50%" : "0%",
-        }}
-        initial={{
-          x: direction === "left" ? "0%" : "-50%",
-        }}
-        transition={{
-          repeat: Infinity,
-          ease: "linear",
-          duration: speed,
-        }}
+    <div className="relative w-full h-[520px] flex items-center justify-evenly overflow-hidden bg-gradient-to-tr from-sky-900/30 via-sky-800/20 to-sky-700/10 backdrop-blur-3xl border border-sky-400/20 shadow-[0_0_30px_rgba(14,165,233,0.3)]">
+
+      {/* Ambient Glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 w-[700px] h-[700px] bg-sky-400/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      </div>
+      
+      <div id="heading" className="
+    opacity-0
+    absolute
+    z-10
+    text-center
+    px-2 py-2
+    rounded-2xl
+    backdrop-blur-xl
+    bg-white/5
+    border border-white/10
+    shadow-[0_0_40px_rgba(14,165,233,0.25)]
+    before:absolute before:inset-0
+    before:rounded-2xl
+    before:bg-gradient-to-r
+    before:from-sky-400/30
+    before:via-transparent
+    before:to-purple-500/20
+    before:blur-xl
+    before:-z-10
+  ">
+      <h2 className="text-4xl font-bold tracking-wide text-sky-100 drop-shadow-[0_0_15px_rgba(14,165,233,0.6)]">
+        Previous <span className="font-extrabold text-cyan-400">Missions</span>
+      </h2>
+      <p className="mt-4 text-sky-400/70 max-w-2xl mx-auto">
+        Push your <span className="text-cyan-300 font-bold">LIMITS</span> with Brand new enhanced edition of <span className="text-cyan-500 font-bold">Trajectory_2k26</span>
+      </p>
+    </div>
+
+      {/* Left Arrow */}
+      <button
+        onClick={prev}
+        className="hover:cursor-pointer h-12 w-12 text-sky-400 rounded-full bg-sky-900/40 backdrop-blur-md border border-sky-400/30 flex items-center justify-center transition-all duration-300 hover:bg-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_25px_rgba(14,165,233,0.7)] active:scale-95 z-50"
       >
-        {items.map((item, index) => (
-          <span
-            key={index}
-            className={`text-2xl md:text-6xl font-black uppercase tracking-tighter ${itemClassName}`}
-            style={{ 
-              color: color,
-              textShadow: `0 0 15px ${color}80` 
-            }}
-          >
-            {item}
-          </span>
-        ))}
-      </motion.div>
-      <motion.div
-        className="flex gap-6 md:gap-10 py-2"
-        animate={{
-          x: direction === "left" ? "-50%" : "0%",
-        }}
-        initial={{
-          x: direction === "left" ? "0%" : "-50%",
-        }}
-        transition={{
-          repeat: Infinity,
-          ease: "linear",
-          duration: speed,
-        }}
+        <ChevronLeftIcon className="h-6 w-6" />
+      </button>
+
+      {/* Card Stage */}
+      <div
+        ref={containerRef}
+        id="cards"
+        className="opacity-0 translate-y-20 relative w-[70rem] h-ful flex items-center justify-center perspective-distant mt-30"
       >
-        {items.map((item, index) => (
-          <span
-            key={`dup-${index}`}
-            className={`text-2xl md:text-6xl font-black uppercase tracking-tighter ${itemClassName}`}
-            style={{ 
-              color: color,
-              textShadow: `0 0 15px ${color}80` 
-            }}
-          >
-            {item}
-          </span>
+        {events.map((event: any, index: number) => (
+          <div key={index} className="card absolute">
+            <MarqueeCard event={event} />
+          </div>
         ))}
-      </motion.div>
+      </div>
+
+      {/* Right Arrow */}
+      <button
+        onClick={next}
+        className="hover:cursor-pointer h-12 w-12 text-sky-400 rounded-full bg-sky-900/40 backdrop-blur-md border border-sky-400/30 flex items-center justify-center transition-all duration-300 hover:bg-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_25px_rgba(14,165,233,0.7)] active:scale-95 z-50"
+      >
+        <ChevronRightIcon className="h-6 w-6" />
+      </button>
     </div>
   );
 };
-
-const MarqueeSection = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isActive, setIsActive] = useState(false);
-
-  const rowColors = ["#00E5FF", "#007CF0", "#00FFFF", "#00E5FF"];
-
-  return (
-    <section
-      ref={containerRef}
-      className={`relative w-full py-20 md:py-32 bg-[#0B0F1A] flex flex-col justify-center overflow-hidden transition-colors duration-1000 ${isActive ? 'bg-[#0E1624]' : 'bg-[#0B0F1A]'}`}
-    >
-      <motion.div
-        onViewportEnter={() => setIsActive(true)}
-        onViewportLeave={() => setIsActive(false)}
-        viewport={{ amount: 0.5 }}
-        className="absolute inset-0 pointer-events-none"
-      />
-      {/* CRT Monitor Frame (Left/Right Borders) */}
-      <div className="absolute left-0 top-0 w-1 md:w-2 h-full bg-primary/20 border-r border-primary/40 z-30" />
-      <div className="absolute right-0 top-0 w-1 md:w-2 h-full bg-primary/20 border-l border-primary/40 z-30" />
-      
-      {/* Chassis Corner Accents */}
-      <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary/60 z-40" />
-      <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-primary/60 z-40" />
-      <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-primary/60 z-40" />
-      <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary/60 z-40" />
-
-      {/* CRT Overlay Layer */}
-      <div className="absolute inset-0 pointer-events-none z-20">
-        {/* Vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_60%,rgba(0,0,0,0.7)_100%)]" />
-        
-        {/* Scanlines */}
-        <div className="absolute inset-0 opacity-[0.15] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.4)_50%)] bg-[length:100%_4px]" />
-        
-        {/* Flicker Effect */}
-        <div className="absolute inset-0 bg-white/5 animate-[flicker_0.15s_infinite] opacity-[0.03]" />
-      </div>
-
-      <div className={`relative flex flex-col justify-center gap-4 md:gap-8 z-10 transition-all duration-700 ${isActive ? 'scale-105 opacity-100' : 'scale-100 opacity-90'}`}>
-        <MarqueeRow items={marqueeItems} direction="left" speed={40} color={rowColors[0]} itemClassName={isActive ? "opacity-100" : "opacity-80"} />
-        <MarqueeRow 
-          items={marqueeItems} 
-          direction="right" 
-          speed={30} 
-          className="scale-95" 
-          color={rowColors[1]}
-          itemClassName={isActive ? "opacity-100" : "opacity-60"}
-        />
-        <MarqueeRow items={marqueeItems} direction="left" speed={35} color={rowColors[2]} itemClassName={isActive ? "opacity-100" : "opacity-80"} />
-        <MarqueeRow 
-          items={marqueeItems} 
-          direction="right" 
-          speed={25} 
-          className="scale-90"
-          color={rowColors[3]}
-          itemClassName={isActive ? "opacity-100" : "opacity-60"}
-        />
-      </div>
-
-      <style jsx global>{`
-        @keyframes flicker {
-          0% { opacity: 0.01; }
-          5% { opacity: 0.05; }
-          10% { opacity: 0.01; }
-          15% { opacity: 0.08; }
-          20% { opacity: 0.02; }
-          25% { opacity: 0.05; }
-          30% { opacity: 0.01; }
-          100% { opacity: 0.02; }
-        }
-      `}</style>
-    </section>
-  );
-};
-
-export default MarqueeSection;

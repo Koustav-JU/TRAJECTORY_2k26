@@ -56,22 +56,6 @@ const Navbar = () => {
       <div className="flex items-center gap-2 md:gap-6">
         <motion.div variants={itemVariants} className="relative group">
           <Link
-            href="/#explore"
-            className={`relative z-10 px-4 py-2 text-sm md:text-lg font-medium transition-colors duration-300 group-hover:text-[var(--color-primary)] ${
-              pathname === "/" ? "text-[var(--color-primary)]" : "text-[var(--color-accent)]"
-            }`}
-          >
-            Explore
-            <motion.div
-              className={`absolute inset-0 bg-white/5 rounded-full -z-10 transition-opacity duration-300 ${
-                pathname === "/" ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-              }`}
-              layoutId="nav-hover"
-            />
-          </Link>
-        </motion.div>
-        <motion.div variants={itemVariants} className="relative group">
-          <Link
             href={"/about"}
             className={`relative z-10 px-4 py-2 text-sm md:text-lg font-medium transition-colors duration-300 group-hover:text-[var(--color-primary)] ${
               isActive("/about") ? "text-[var(--color-primary)]" : "text-[var(--color-accent)]"

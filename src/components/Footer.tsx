@@ -68,14 +68,6 @@ const Footer = () => {
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-primary/5 blur-sm" />
               </Link>
 
-              <Link 
-                href="https://www.facebook.com/profile.php?id=61572408332143" 
-                target="_blank"
-                className="group relative p-4 border border-white/5 bg-[#0B0F1A] hover:border-primary/40 transition-all duration-500"
-              >
-                <Facebook className="w-6 h-6 text-white/70 group-hover:text-primary transition-colors duration-300" />
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-primary/5 blur-sm" />
-              </Link>
             </div>
 
             <div className="flex flex-col items-center gap-2">

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import SmoothScroll from "@/components/SmoothScroll";
 import MouseFlare from "@/components/MouseFlare";
+import { Toaster } from "react-hot-toast";
 import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 
 const geistSans = Geist({
@@ -30,6 +31,7 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
+  
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
@@ -41,6 +43,7 @@ export default function RootLayout({
             <MouseFlare />
             <Navbar />
             {children}
+            <Toaster position="top-center" />
           </SmoothScroll>
         </EntryGate>
       </body>

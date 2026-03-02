@@ -2,107 +2,118 @@
 
 import { motion } from "motion/react";
 import EventCard, { EventData } from "@/components/EventCard";
+import Footer from "@/components/Footer";
 
 const events: EventData[] = [
   {
     id: "XD-349",
-    title: "HYDROBLASTERS",
+    title: "EVENT-1",
     category: "Simulation",
     desc: "Test your problem-solving skills with complex 3D simulations and scenarios. Model, simulate, and conquer.",
     date: "DAY-01",
-    teamSize: "Max Participants - 4",
+    teamSize: "TBD",
     color: "#00ffff",
     index: 0,
+    image: "",
   },
   {
     id: "CS-882",
-    title: "EGGS-CAGE",
+    title: "EVENT-2",
     category: "Engineering",
     desc: "Dive deep into real-world engineering cases and present innovative, data-driven solutions to a panel of judges.",
     date: "DAY-01",
-    teamSize: "Max Participants - 3",
+    teamSize: "TBD",
     color: "#ff00ff",
     index: 1,
+    image: "",
   },
   {
     id: "RW-731",
-    title: "MAZECRAFT",
+    title: "EVENT-3",
     category: "Robotics",
     desc: "Build and battle autonomous robots in an arena-style combat competition. Last bot standing wins.",
     date: "DAY-02",
-    teamSize: "Max Participants - 4",
+    teamSize: "TBD",
     color: "#ff4400",
     index: 2,
+    image: "",
   },
   {
     id: "CP-417",
-    title: "ROBO LEAGUE",
+    title: "EVENT-4",
     category: "Coding",
     desc: "A fast-paced competitive programming challenge to test your algorithmic skills under extreme time pressure.",
     date: "DAY-01",
-    teamSize: "Max Participants - 4",
+    teamSize: "TBD",
     color: "#00ff88",
     index: 3,
+    image: "",
   },
   {
     id: "BB-503",
-    title: "MODEL MATRIX",
+    title: "EVENT-5",
     category: "Structural",
     desc: "Design and construct a model bridge to withstand maximum load using only the provided materials.",
     date: "DAY-02",
-    teamSize: "Solo",
+    teamSize: "TBD",
     color: "#ffaa00",
     index: 4,
+    image: "",
   },
   {
     id: "GL-102",
-    title: "TARKA VITARKA",
+    title: "EVENT-6",
     category: "Culture & Logic",
     desc: "A rapid-fire quiz covering science, engineering, and general knowledge. Speed and accuracy are everything.",
     date: "DAY-01",
-    teamSize: "Solo",
+    teamSize: "TBD",
     color: "#ffff00",
     index: 5,
+    image: "",
   },
   {
     id: "CD-664",
-    title: "GYAN YUDH",
+    title: "EVENT-7",
     category: "Design",
     desc: "Race against the clock to model precision engineering components in CAD software. Every second counts.",
     date: "DAY-02",
-    teamSize: "Max Participants - 2",
+    teamSize: "TBD",
     color: "#0088ff",
     index: 6,
+    image: "",
   },
   {
     id: "DR-819",
-    title: "CATA-PULT",
+    title: "EVENT-8",
     category: "Aerial Tech",
     desc: "Navigate your custom drone through a high-speed obstacle course. Precision piloting decides the champion.",
     date: "DAY-02",
-    teamSize: "Max Participants - 4",
+    teamSize: "TBD",
     color: "#cc00ff",
     index: 7,
+    image: "",
   },
   {
     id: "HC-221",
-    title: "CASECOM",
+    title: "EVENT-9",
     category: "Innovation",
     desc: "48-hour innovation sprint to build working prototypes for real-world problems. Hack. Build. Ship.",
     date: "DAY-01–02",
-    teamSize: "Max Participants - 3",
+    teamSize: "TBD",
     color: "#00E5FF",
     index: 8,
+    image: "",
   },
   {
     id: "MX-000",
-    title: "REEL MAKING",
+    title: "EVENT-10",
     category: "Fun",
     desc: "The grand finale. Prepare for the unexpected. Termination imminent. All clearances revoked.",
     date: "DAY-02",
-    teamSize: "Solo",
+    teamSize: "TBD",
     color: "#ffffff",
     index: 9,
+    image: "",
   },
 ];
 
@@ -126,8 +137,8 @@ const cardVariants = {
 
 const EventsPage = () => {
   return (
-    <main className="min-h-screen bg-[var(--color-vanta)] pt-28 pb-20">
-      <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
+    <main className="min-h-screen w-screen bg-[var(--color-vanta)] pt-28 pb-20">
+      <div className="w-screen mx-auto px-4 md:px-6">
         {/* Hero / Header */}
         <div className="text-center mb-16 md:mb-24">
           <p className="font-mono text-[10px] md:text-xs tracking-[0.4em] text-primary/60 uppercase mb-4">
@@ -150,7 +161,7 @@ const EventsPage = () => {
 
         {/* Event Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -171,6 +182,7 @@ const EventsPage = () => {
           <div className="h-[1px] w-16 bg-linear-to-r from-transparent via-white/10 to-transparent" />
         </div>
       </div>
+      <Footer />
     </main>
   );
 };

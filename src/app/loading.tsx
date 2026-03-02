@@ -100,7 +100,7 @@ export default function Loading() {
       </div>
       <div className="absolute right-10 bottom-10 text-[10px] text-primary/30 space-y-1 hidden md:block text-right">
         <div>COORDINATES: 23.0225° N, 72.5714° E</div>
-        <div>TIME: {new Date().toLocaleTimeString()}</div>
+        {/* <div>TIME: {new Date().toLocaleTimeString()}</div> */}
       </div>
     </div>
   );
