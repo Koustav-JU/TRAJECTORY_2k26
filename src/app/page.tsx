@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import MarqueeSection from "@/components/MarqueeSection";
 import EventTimelineSection from "@/components/EventTimelineSection";
+import SponsorsSection from "@/components/SponsorsSection";
 import CyberneticLensSection from "@/components/CyberneticLensSection";
 import Footer from "@/components/Footer";
 
@@ -11,6 +12,9 @@ export default function Landing() {
       <MarqueeSection />
       
       <EventTimelineSection />
+
+      {/* Past Sponsors Showcase */}
+      <SponsorsSection />
 
       {/* New Mechanical Lens & Featured Events Transition */}
       <CyberneticLensSection />
