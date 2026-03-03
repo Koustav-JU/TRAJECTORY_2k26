@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 type Sponsor = {
   id: string;
   name: string;
+  tagline: string;
 };
 
 type Tier = {
@@ -31,8 +32,10 @@ const tiers: Tier[] = [
     borderClass: "border-primary/30 hover:border-primary/80",
     shadowColor: "rgba(0,229,255,0.2)",
     sponsors: [
-      { id: "SP-001", name: "TechCorp Industries" },
-      { id: "SP-002", name: "MechaDyne Systems" },
+      { id: "SP-001", name: "TechCorp Industries", tagline: "Powering Tomorrow" },
+      { id: "SP-002", name: "MechaDyne Systems", tagline: "Precision Engineering" },
+      { id: "SP-003", name: "NeuroLink AI", tagline: "Intelligence Redefined" },
+      { id: "SP-004", name: "Orbital Dynamics", tagline: "Beyond Boundaries" },
     ],
   },
   {
@@ -43,9 +46,12 @@ const tiers: Tier[] = [
     borderClass: "border-[#FFD700]/30 hover:border-[#FFD700]/80",
     shadowColor: "rgba(255,215,0,0.2)",
     sponsors: [
-      { id: "SP-003", name: "Quantum Forge Labs" },
-      { id: "SP-004", name: "NexGen Robotics" },
-      { id: "SP-005", name: "Apex Engineering Co." },
+      { id: "SP-005", name: "Quantum Forge Labs", tagline: "Shaping the Future" },
+      { id: "SP-006", name: "NexGen Robotics", tagline: "Automate Everything" },
+      { id: "SP-007", name: "Apex Engineering Co.", tagline: "Built to Last" },
+      { id: "SP-008", name: "HyperDrive Tech", tagline: "Speed of Innovation" },
+      { id: "SP-009", name: "CryptoVault Systems", tagline: "Securing the Chain" },
+      { id: "SP-010", name: "Zenith Aerospace", tagline: "Reach the Peak" },
     ],
   },
   {
@@ -56,11 +62,14 @@ const tiers: Tier[] = [
     borderClass: "border-white/20 hover:border-white/60",
     shadowColor: "rgba(192,192,192,0.15)",
     sponsors: [
-      { id: "SP-006", name: "SteelMind Analytics" },
-      { id: "SP-007", name: "Velocity Dynamics" },
-      { id: "SP-008", name: "CoreShift Technologies" },
-      { id: "SP-009", name: "Titan Fabrication" },
-      { id: "SP-010", name: "PulseWave Innovations" },
+      { id: "SP-011", name: "SteelMind Analytics", tagline: "Data Driven" },
+      { id: "SP-012", name: "Velocity Dynamics", tagline: "Move Forward" },
+      { id: "SP-013", name: "CoreShift Technologies", tagline: "Core Innovation" },
+      { id: "SP-014", name: "Titan Fabrication", tagline: "Strength in Code" },
+      { id: "SP-015", name: "PulseWave Innovations", tagline: "Signal the Future" },
+      { id: "SP-016", name: "AetherNet Solutions", tagline: "Connected Always" },
+      { id: "SP-017", name: "Blackstone Digital", tagline: "Digital Frontiers" },
+      { id: "SP-018", name: "FrostByte Computing", tagline: "Cool Performance" },
     ],
   },
 ];
@@ -212,12 +221,12 @@ const SponsorsSection = () => {
 
               {/* Cards grid */}
               <div
-                className={`sponsor-tier-group flex flex-wrap justify-center gap-6 ${
+                className={`sponsor-tier-group grid gap-6 ${
                   tier.key === "platinum"
-                    ? "max-w-2xl mx-auto"
+                    ? "grid-cols-1 sm:grid-cols-2 max-w-3xl mx-auto"
                     : tier.key === "gold"
-                    ? "max-w-4xl mx-auto"
-                    : "max-w-5xl mx-auto"
+                    ? "grid-cols-2 sm:grid-cols-3 max-w-4xl mx-auto"
+                    : "grid-cols-2 sm:grid-cols-4 max-w-5xl mx-auto"
                 }`}
               >
                 {tier.sponsors.map((sponsor) => (
@@ -225,10 +234,10 @@ const SponsorsSection = () => {
                     key={sponsor.id}
                     className={`sponsor-card group relative bg-[#0B0F1A] border ${tier.borderClass} transition-all duration-500 overflow-hidden cursor-default hover:scale-105 ${
                       tier.key === "platinum"
-                        ? "w-full sm:w-64 md:w-72 p-8 rounded-2xl"
+                        ? "p-8 rounded-2xl"
                         : tier.key === "gold"
-                        ? "w-full sm:w-52 md:w-60 p-6 rounded-xl"
-                        : "w-full sm:w-40 md:w-48 p-5 rounded-xl"
+                        ? "p-6 rounded-xl"
+                        : "p-5 rounded-xl"
                     }`}
                     onMouseEnter={(e) => {
                       (e.currentTarget as HTMLElement).style.boxShadow = `0 0 30px ${tier.shadowColor}`;
@@ -256,14 +265,14 @@ const SponsorsSection = () => {
                       style={{ borderColor: tier.color }}
                     />
 
-                    {/* Logo placeholder — data-terminal display */}
+                    {/* Logo placeholder — hexagonal icon display */}
                     <div
-                      className={`relative z-10 flex items-center justify-center rounded-lg mb-4 font-mono text-center leading-tight select-none ${
+                      className={`relative z-10 flex flex-col items-center justify-center rounded-lg mb-4 font-mono text-center leading-tight select-none ${
                         tier.key === "platinum"
-                          ? "h-24 text-[10px]"
+                          ? "h-28 text-[10px]"
                           : tier.key === "gold"
-                          ? "h-16 text-[9px]"
-                          : "h-12 text-[8px]"
+                          ? "h-20 text-[9px]"
+                          : "h-14 text-[8px]"
                       }`}
                       style={{
                         background: `linear-gradient(135deg, ${tier.color}08, ${tier.color}18)`,
@@ -272,6 +281,20 @@ const SponsorsSection = () => {
                         textShadow: `0 0 6px ${tier.color}40`,
                       }}
                     >
+                      <svg
+                        className={`mb-1 opacity-60 group-hover:opacity-100 transition-opacity ${
+                          tier.key === "platinum" ? "w-10 h-10" : tier.key === "gold" ? "w-7 h-7" : "w-5 h-5"
+                        }`}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke={tier.color}
+                        strokeWidth="1.5"
+                      >
+                        <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
+                        <line x1="12" y1="2" x2="12" y2="22" />
+                        <line x1="2" y1="8.5" x2="22" y2="8.5" />
+                        <line x1="2" y1="15.5" x2="22" y2="15.5" />
+                      </svg>
                       <span className="uppercase tracking-widest px-2">[ LOGO ]</span>
                     </div>
 
@@ -288,9 +311,21 @@ const SponsorsSection = () => {
                       {sponsor.name}
                     </p>
 
+                    {/* Sponsor tagline */}
+                    <p
+                      className="relative z-10 text-center font-mono tracking-wider mt-1 opacity-50 group-hover:opacity-80 transition-opacity truncate"
+                      style={{
+                        color: tier.color,
+                        fontSize:
+                          tier.key === "platinum" ? "0.65rem" : tier.key === "gold" ? "0.6rem" : "0.55rem",
+                      }}
+                    >
+                      {sponsor.tagline}
+                    </p>
+
                     {/* ID code */}
                     <p className="relative z-10 text-center font-mono text-white/25 tracking-[0.3em] mt-1"
-                      style={{ fontSize: "0.6rem" }}>
+                      style={{ fontSize: "0.55rem" }}>
                       {sponsor.id}
                     </p>
                   </div>
