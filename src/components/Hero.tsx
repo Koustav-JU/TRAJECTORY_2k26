@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
+import Hyperspeed  from "./Hyperspeed";
 
 const Hero = () => {
   const containerVariants = {
@@ -32,13 +33,7 @@ const Hero = () => {
     <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/bg-new.webp"
-          alt="Dystopian Hero Background"
-          fill
-          className="object-cover opacity-60 scale-110"
-          priority
-        />
+        <Hyperspeed/>
         {/* Gradient Overlay for Dystopian Feel */}
         <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/20 to-black/90 pointer-events-none" />
         
