@@ -24,6 +24,7 @@ interface EventCardProps {
 const EventCard = ({ event }: EventCardProps) => {
 
   const router = useRouter();
+
   const handleClick = () => {
     toast("🚧 Registration opens soon!", {
       duration: 3000,
@@ -34,12 +35,12 @@ const EventCard = ({ event }: EventCardProps) => {
         border: "1px solid rgba(56,189,248,0.3)",
       },
     });
-    router.push("/coming_soon");
   };
 
   return (
     <motion.div
-      className="group relative h-[420px] bg-[#0B0F1A] border border-white/5 rounded-none overflow-hidden transition-[border-color,box-shadow] duration-500 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(0,229,255,0.1)]"
+      onClick={()=>router.push("./coming_soon")}
+      className="group hover:cursor-pointer relative h-[420px] bg-[#0B0F1A] border border-white/5 rounded-none overflow-hidden transition-[border-color,box-shadow] duration-500 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(0,229,255,0.1)]"
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.3 }}
     >
