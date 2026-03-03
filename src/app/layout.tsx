@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import SmoothScroll from "@/components/SmoothScroll";
 import MouseFlare from "@/components/MouseFlare";
 import { Toaster } from "react-hot-toast";
-import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

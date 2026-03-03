@@ -90,8 +90,8 @@ const EventTimelineSection = () => {
         
         {/* Header */}
         <div className="text-center mb-24 md:mb-40">
-          <h2 className="text-4xl md:text-8xl font-black text-white uppercase tracking-tighter filter drop-shadow-[0_0_20px_rgba(0,229,255,0.5)]">
-            Event Timeline
+          <h2 className="text-4xl md:text-8xl font-black text-cyan-400 uppercase tracking-tighter filter drop-shadow-[0_0_20px_rgba(0,229,255,0.5)]">
+            Event <span className="text-white">Timeline</span>
           </h2>
           <p className="text-primary font-mono text-sm mt-4 tracking-[0.3em] uppercase opacity-60">The Realignment Sequence</p>
         </div>
