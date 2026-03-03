@@ -18,53 +18,35 @@ const Grid = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleEnter = (card: HTMLDivElement) => {
-    if (!containerRef.current) return;
-    const siblings = Array.from(containerRef.current.children);
-    
-    gsap.to(siblings, {
-      opacity: 0.4,
-      scale: 0.98,
-      duration: 0.3,
-      ease: "power2.out"
-    });
-
-    gsap.to(card, {
-      opacity: 1,
-      scale: 1.05,
-      duration: 0.3,
-      ease: "power2.out"
-    });
-  };
-
-  const handleLeave = () => {
-    if (!containerRef.current) return;
-    const cards = containerRef.current.children;
-    
-    gsap.to(cards, {
-      opacity: 1,
-      scale: 1,
-      duration: 0.3,
-      ease: "power2.out"
-    });
-  };
-
   useGSAP(() => {
     if (!containerRef.current) return;
+    
+    // Ensure GSAP recalculates positions
+    ScrollTrigger.refresh();
+
     const cards = Array.from(containerRef.current.children) as HTMLDivElement[];
     
-    // Entrance animation - staggered reveal
-    gsap.from(cards, {
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 85%",
+    if (cards.length === 0) return;
+
+    // Use fromTo for explicit state control
+    gsap.fromTo(cards, 
+      { 
+        y: 40, 
+        opacity: 0 
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 95%",
+          toggleActions: "play none none none",
+        }
       }
-    });
+    );
 
   }, { scope: containerRef });
 
@@ -76,12 +58,7 @@ const Grid = ({
         className,
       )}
     >
-      {React.Children.map(children, (child: any) =>
-        React.cloneElement(child as React.ReactElement<any>, {
-          onHoverEntry: handleEnter,
-          onHoverExit: handleLeave,
-        })
-      )}
+      {children}
     </div>
   );
 };
@@ -93,9 +70,6 @@ const Card = ({
   background,
   Icon,
   description,
-  onHoverEntry,
-  onHoverExit,
-  
 }: {
   name: string;
   className: string;
@@ -103,40 +77,36 @@ const Card = ({
   Icon: React.ElementType;
   description: string;
   href: string;
-  onHoverEntry?: (e: HTMLDivElement) => void;
-  onHoverExit?: () => void;
-  
 }) => (
-
   <div
-    onMouseEnter={(e) => onHoverEntry?.(e.currentTarget as HTMLDivElement)}
-    onMouseLeave={() => onHoverExit?.()}
     key={name}
     className={cn(
       "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl",
-      // theme styles
-      "from-[#0B0F1A] to-[#111827] bg-linear-to-tr border-x-2 border-y-2 border-primary/20 shadow-[15px_15px_20px_rgba(0,229,255,0.05)] hover:from-[#111827] hover:to-[#0B0F1A] hover:bg-linear-to-tr ease-in-out duration-300 transform-gpu transition-all hover:shadow-[15px_15px_30px_rgba(0,229,255,0.15)]",
+      // Theme styles with CSS transitions for performance
+      "from-[#0B0F1A] to-[#111827] bg-linear-to-tr border-x-2 border-y-2 border-primary/20",
+      "shadow-[15px_15px_20px_rgba(0,229,255,0.05)]",
+      "transition-all duration-300 ease-out transform-gpu",
+      "hover:scale-[1.02] hover:shadow-[15px_15px_30px_rgba(0,229,255,0.15)]",
+      "hover:border-primary/40",
       className,
     )}
   >
-    <div >{background}</div>
-    <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-3">
-
-      <Icon className="h-12 w-12 origin-left transform-gpu text-primary group-hover:text-accent transition-all duration-300 ease-in-out group-hover:scale-75" />
-      <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
+    <div className="absolute inset-0 z-0">{background}</div>
+    
+    <div className="pointer-events-none z-10 flex flex-col gap-1 p-6 transition-transform duration-300 group-hover:-translate-y-1">
+      <Icon className="h-12 w-12 text-primary transition-all duration-300 group-hover:text-accent group-hover:scale-110" />
+      <h3 className="text-xl font-bold text-white transition-colors duration-300 group-hover:text-primary">
         {name}
       </h3>
-      <p className="max-w-lg text-white/70 group-hover:text-white transition-colors">{description}</p>
+      <p className="max-w-lg text-white/70 transition-colors duration-300 group-hover:text-white">
+        {description}
+      </p>
     </div>
 
-    <div
-      className={cn(
-        "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
-      )}
-    >
-    </div>
-    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
+    {/* Subtle hover overlay */}
+    <div className="pointer-events-none absolute inset-0 bg-primary/0 transition-colors duration-300 group-hover:bg-primary/5" />
   </div>
 );
+
 
 export { Card, Grid };

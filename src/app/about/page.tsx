@@ -39,15 +39,23 @@ const AbtPage = () => {
     });
 
     // Vision Section Reveal
-    gsap.from(visionRef.current, {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      scrollTrigger: {
-        trigger: visionRef.current,
-        start: "top 80%",
+    gsap.fromTo(visionRef.current, 
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: visionRef.current,
+          start: "top 90%",
+          toggleActions: "play none none none",
+        }
       }
-    });
+    );
+
+    // Refresh triggers to ensure correct positions
+    ScrollTrigger.refresh();
   }, { scope: containerRef });
 
     
