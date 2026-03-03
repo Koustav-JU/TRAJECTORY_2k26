@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const events: EventData[] = [
   {
     id: "XD-349",
-    title: "EVENT-1",
+    title: "EVENT",
     category: "Engineering",
     desc: "",
     date: "TBD",
@@ -18,7 +18,7 @@ const events: EventData[] = [
   },
   {
     id: "CS-882",
-    title: "EVENT-2",
+    title: "EVENT",
     category: "Engineering",
     desc: "",
     date: "TBD",
@@ -29,7 +29,7 @@ const events: EventData[] = [
   },
   {
     id: "RW-731",
-    title: "EVENT-3",
+    title: "EVENT",
     category: "Engineering",
     desc: "",
     date: "TBD",
@@ -40,7 +40,7 @@ const events: EventData[] = [
   },
   {
     id: "CP-417",
-    title: "EVENT-4",
+    title: "EVENT",
     category: "Engineering",
     desc: "",
     date: "TBD",
@@ -51,7 +51,7 @@ const events: EventData[] = [
   },
   {
     id: "BB-503",
-    title: "EVENT-5",
+    title: "EVENT",
     category: "Engineering",
     desc: "",
     date: "TBD",
@@ -62,7 +62,7 @@ const events: EventData[] = [
   },
   {
     id: "GL-102",
-    title: "EVENT-6",
+    title: "EVENT",
     category: "Engineering",
     desc: "",
     date: "TBD",
@@ -73,7 +73,7 @@ const events: EventData[] = [
   },
   {
     id: "CD-664",
-    title: "EVENT-7",
+    title: "EVENT",
     category: "Engineering",
     desc: "",
     date: "TBD",
@@ -84,7 +84,7 @@ const events: EventData[] = [
   },
   {
     id: "DR-819",
-    title: "EVENT-8",
+    title: "EVENT",
     category: "Engineering",
     desc: "",
     date: "TBD",
@@ -95,7 +95,7 @@ const events: EventData[] = [
   },
   {
     id: "HC-221",
-    title: "EVENT-9",
+    title: "EVENT",
     category: "Engineering",
     desc: "",
     date: "TBD",
@@ -106,7 +106,7 @@ const events: EventData[] = [
   },
   {
     id: "MX-000",
-    title: "EVENT-10",
+    title: "EVENT",
     category: "Engineering",
     desc: "",
     date: "TBD",
