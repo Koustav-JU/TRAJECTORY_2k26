@@ -1,12 +1,12 @@
 "use client";
 import About from "@/components/aboutgrid";
 import Footer from "@/components/Footer";
-import Image from "next/image";
 import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { motion } from "motion/react";
+import Hyperspeed from "@/components/Hyperspeed";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,13 +79,7 @@ const AbtPage = () => {
     <div ref={containerRef} className="relative w-full min-h-screen overflow-hidden bg-vanta">
       {/* Parallax Background */}
       <div ref={bgRef} className="absolute inset-0 z-0">
-        <Image
-          src="/bg-new.webp"
-          alt="background"
-          fill
-          className="object-cover opacity-10 blur-[2px]"
-          priority
-        />
+        <Hyperspeed/>
         <div className="absolute inset-0 bg-linear-to-b from-vanta via-transparent to-vanta" />
       </div>
 
