@@ -11,7 +11,7 @@ export default function EntryGate({ children }: { children: React.ReactNode }) {
     // 2.5 seconds to smooth load and provide premium intro
     const timer = setTimeout(() => {
       setIsEntryComplete(true);
-    }, 2500);
+    }, 1500);
     return () => clearTimeout(timer);
   }, []);
 

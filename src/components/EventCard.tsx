@@ -3,6 +3,7 @@
 import Footer from "@/components/Footer"
 import { motion } from "motion/react";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export interface EventData {
   id: string;
@@ -22,6 +23,7 @@ interface EventCardProps {
 
 const EventCard = ({ event }: EventCardProps) => {
 
+  const router = useRouter();
   const handleClick = () => {
     toast("🚧 Registration opens soon!", {
       duration: 3000,
@@ -32,6 +34,7 @@ const EventCard = ({ event }: EventCardProps) => {
         border: "1px solid rgba(56,189,248,0.3)",
       },
     });
+    router.push("/coming_soon");
   };
 
   return (

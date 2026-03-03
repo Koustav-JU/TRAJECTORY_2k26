@@ -10,7 +10,7 @@ const FeaturedEvents = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
-    toast("🚧 Logs Will Be Accessible Soon!", {
+    toast("🛠️ Arena opens soon....Stay tuned!! 🛠️", {
       duration: 3000,
       style: {
         borderRadius: "12px",
@@ -94,7 +94,7 @@ const FeaturedEvents = () => {
         <div className="flex items-center justify-center gap-3 md:gap-6">
           <div className="h-[1px] md:h-[2px] w-12 md:w-24 bg-linear-to-r from-transparent via-primary to-transparent" />
           <p className="text-primary font-mono text-[8px] md:text-sm tracking-[0.4em] md:tracking-[0.8em] uppercase opacity-80">
-             // SECTOR_07_ASSIGNMENT
+             🛠️ IGNITION_SEQUENCE_07 🛠️ 
           </p>
           <div className="h-[1px] md:h-[2px] w-12 md:w-24 bg-linear-to-r from-transparent via-primary to-transparent" />
         </div>
@@ -181,11 +181,8 @@ const FeaturedEvents = () => {
               </div>
               
               <div className="flex items-center justify-between">
-                <div className="font-mono text-[8px] md:text-[10px] text-white/20">
-                  <span className="text-primary">00:00:</span>{index < 3 ? '42' : '99'}
-                </div>
                 <button onClick={handleClick} className="hover:cursor-pointer text-[8px] md:text-[10px] font-mono text-primary border border-primary/20 px-3 md:px-4 py-1.5 md:py-2 hover:bg-primary/10 transition-colors">
-                  ACCESS_LOGS
+                  ENTER_THE_ARENA
                 </button>
               </div>
             </div>

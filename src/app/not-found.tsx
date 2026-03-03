@@ -85,7 +85,7 @@ export default function NotFound() {
         SECTOR: UNKNOWN_VOID
       </div>
       <div className="absolute bottom-6 right-6 text-[10px] text-secondary/40 text-right uppercase tracking-widest">
-        Unauthorized access detected
+        Unknown Route...Accessed Denied
       </div>
     </div>
   );

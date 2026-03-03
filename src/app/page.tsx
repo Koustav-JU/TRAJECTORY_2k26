@@ -3,6 +3,7 @@ import MarqueeSection from "@/components/MarqueeSection";
 import EventTimelineSection from "@/components/EventTimelineSection";
 import CyberneticLensSection from "@/components/CyberneticLensSection";
 import Footer from "@/components/Footer";
+import SponsorsSection from "@/components/SponsorSection";
 
 export default function Landing() {
   return (
@@ -11,6 +12,8 @@ export default function Landing() {
       <MarqueeSection />
       
       <EventTimelineSection />
+
+      {/* <SponsorsSection/> */}
 
       {/* New Mechanical Lens & Featured Events Transition */}
       <CyberneticLensSection />

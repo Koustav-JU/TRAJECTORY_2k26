@@ -14,14 +14,16 @@ gsap.registerPlugin(ScrollTrigger);
 export default function MarqueeSection () {
   const pathname = usePathname();
   const containerRef = useRef(null);
-  const [active, setActive] = useState(5);
+  const headingRef = useRef(null);
+
+  const [active, setActive] = useState(0);
 
   const next = () => {
-  setActive((prev) => (prev + 1) % 10);
+  setActive((prev) => (prev + 1) % 12);
 };
 
 const prev = () => {
-  setActive((prev) => (prev - 1 + 10) % 10);
+  setActive((prev) => (prev - 1 + 12) % 12);
 };
 
 
@@ -48,24 +50,24 @@ const prev = () => {
 
 
 useEffect(() => {
-  gsap.to("#heading", {
+  gsap.to(headingRef.current, {
     y: -200,
     opacity: 1,
     duration: 1,
     color: "rgba(0,0,255,0.6)",
     scrollTrigger: {
-      trigger: "#heading",
+      trigger: headingRef.current,
       start: "top 80%",
     },
     ease: "power2.out",
   });
 
-  gsap.to("#cards", {
+  gsap.to(containerRef.current, {
     y:0,
     opacity:1,
     duration:2,
     scrollTrigger:{
-      trigger:"#cards",
+      trigger: containerRef.current,
       start: "top 90%",
     },
     ease: "power3.out",
@@ -110,7 +112,7 @@ useEffect(() => {
     id: "Cricket",
     title: "",
     image: "13",
-    description: "Even if you are our beloved Prof, we welcome you <3",
+    description: "Even if you are our beloved Prof, we welcome you 💕",
     index: 4,
     color: "",
   },
@@ -154,6 +156,22 @@ useEffect(() => {
     index: 9,
     color: "",
   },
+  {
+    id: "Mechnical Building",
+    title: "",
+    image: "15",
+    description: "Our Beloved Mechanical Building felt more alive than ever",
+    index: 10,
+    color: "",
+  },
+  {
+    id: "The Organizers 💕",
+    title: "",
+    image: "16",
+    description: "The people who made Trajectory 2k25 a reality",
+    index: 11,
+    color: "",
+  },
   
 ];
   return (
@@ -190,7 +208,7 @@ useEffect(() => {
         <div className="absolute top-1/2 left-1/2 w-[700px] h-[700px] bg-sky-400/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
       </div>
       
-      <div id="heading" className="
+      <div ref={headingRef} className="
     opacity-0
     absolute
     z-10
@@ -229,7 +247,6 @@ useEffect(() => {
       {/* Card Stage */}
       <div
         ref={containerRef}
-        id="cards"
         className="opacity-0 translate-y-20 relative w-[70rem] h-ful flex items-center justify-center perspective-distant mt-30"
       >
         {events.map((event: any, index: number) => (
