@@ -4,6 +4,7 @@ import Footer from "@/components/Footer"
 import { motion } from "motion/react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { events } from "@/app/data/events"
 
 export interface EventData {
   id: string;
@@ -25,21 +26,29 @@ const EventCard = ({ event }: EventCardProps) => {
 
   const router = useRouter();
 
-  const handleClick = () => {
-    toast("🚧 Registration opens soon!", {
-      duration: 3000,
-      style: {
-        borderRadius: "12px",
-        background: "#0f172a",
-        color: "#38bdf8",
-        border: "1px solid rgba(56,189,248,0.3)",
-      },
-    });
+  const handleClick = (e:HTMLDivElement) => {
+    if(1==1){
+      toast("🚧 Registration opens soon!", {
+        duration: 3000,
+        style: {
+          borderRadius: "12px",
+          background: "#0f172a",
+          color: "#38bdf8",
+          border: "1px solid rgba(56,189,248,0.3)",
+        },
+      });
+      router.push("./coming_soon");
+    }
+    // else{
+    //   router.push(`./event/${e.id}`);
+    // }
+    
   };
 
   return (
     <motion.div
-      onClick={()=>router.push("./coming_soon")}
+      id={event.id}
+      onClick={(e)=>handleClick(e.currentTarget)}
       className="group hover:cursor-pointer relative h-[420px] bg-[#0B0F1A] border border-white/5 rounded-none overflow-hidden transition-[border-color,box-shadow] duration-500 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(0,229,255,0.1)]"
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.3 }}
@@ -87,7 +96,7 @@ const EventCard = ({ event }: EventCardProps) => {
               style={{ boxShadow: `inset 0 0 20px ${event.color}11` }}
             >
               <span className="text-[10px] font-mono text-white/70 tracking-[0.2em]">
-                {event.id}
+                {event.category}
               </span>
               <div className="absolute -top-[3px] -left-[3px] w-2 h-2 border-l border-t border-primary" />
               <div className="absolute -bottom-[3px] -right-[3px] w-2 h-2 border-r border-b border-primary" />
@@ -133,7 +142,7 @@ const EventCard = ({ event }: EventCardProps) => {
               <span className="text-primary">00:00:</span>
               {String(event.index * 7 + 13).padStart(2, "0")}
             </div>
-            <button onClick={handleClick} className="hover:cursor-pointer text-[10px] font-mono text-primary border border-primary/20 px-4 py-2 hover:bg-primary/10 hover:border-primary/50 transition-colors duration-300">
+            <button className="hover:cursor-pointer text-[10px] font-mono text-primary border border-primary/20 px-4 py-2 hover:bg-primary/10 hover:border-primary/50 transition-colors duration-300">
               REGISTER
             </button>
           </div>

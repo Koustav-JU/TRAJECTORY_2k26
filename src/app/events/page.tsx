@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 const events: EventData[] = [
   {
-    id: "XD-349",
+    id: "eggscage",
     title: "EVENT",
     category: "Engineering",
     desc: "",
@@ -17,7 +17,7 @@ const events: EventData[] = [
     image: "",
   },
   {
-    id: "CS-882",
+    id: "casecom",
     title: "EVENT",
     category: "Engineering",
     desc: "",
