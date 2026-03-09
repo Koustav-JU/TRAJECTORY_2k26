@@ -38,7 +38,7 @@ export const events = [
             <li><span className="font-semibold">Priyabrata Majumder:</span> Contact: +91 9903861370</li>
             </>
         ),
-        gdrive:("https://drive.google.com/drive/folders/1IZajs678iqtCK4RxjlSs84PdcPM3QlZg"),
+        gdrive:("https://drive.google.com/file/d/17ThkwtID0deaguQpLj16rcD4nBHL8V6p/view"),
         register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
     },
