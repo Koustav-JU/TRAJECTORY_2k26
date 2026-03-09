@@ -10,15 +10,19 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 export interface EventData {
-  id: string;
-  title: string;
-  category: string;
-  desc: string;
-  date: string;
-  teamSize: string;
-  color: string;
-  index: number;
-  image:string;
+  slug: string,
+  id: number,
+  title: string,
+  image: string,
+  pricepool:string,
+  date: string,
+  guidelines: React.ReactNode,
+  description: string,
+  teamSize: string,
+  team_structure: React.ReactNode,
+  event_coordinators: React.ReactNode,
+  gdrive: string,
+  register: string,
 }
 
 interface EventCardProps {
@@ -70,7 +74,7 @@ const EventCard = ({ event }: EventCardProps) => {
   return (
     <motion.div
       ref={cardRef}
-      id={event.id}
+      id={event.slug}
       onClick={(e)=>handleClick(e.currentTarget)}
       className="group hover:cursor-pointer relative h-[420px] bg-[#0B0F1A] border border-white/5 rounded-none overflow-hidden transition-[border-color,box-shadow] duration-500 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(0,229,255,0.1)]"
       whileHover={{ scale: 1.02 }}
@@ -81,14 +85,14 @@ const EventCard = ({ event }: EventCardProps) => {
 
       {/* Ghost Number Background */}
       <div className="absolute -right-4 -bottom-4 text-[10rem] font-black text-white/[0.02] group-hover:text-primary/[0.04] transition-colors duration-700 select-none leading-none">
-        {event.index + 1}
+        {event.id}
       </div>
 
       {/* Grid overlay */}
       <div
         className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none"
         style={{
-          backgroundImage: `linear-gradient(${event.color}55 1px, transparent 1px), linear-gradient(90deg, ${event.color}55 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient-55 1px, transparent 1px), linear-gradient(90deg, 1px, transparent 1px)`,
           backgroundSize: "40px 40px",
         }}
       />
@@ -116,11 +120,8 @@ const EventCard = ({ event }: EventCardProps) => {
           <div className="flex items-center justify-between mb-5">
             <div
               className="inline-flex items-center justify-center border border-white/10 px-3 py-1 backdrop-blur-sm relative"
-              style={{ boxShadow: `inset 0 0 20px ${event.color}11` }}
+              style={{ boxShadow: `inset 0 0 20px` }}
             >
-              <span className="text-[10px] font-mono text-white/70 tracking-[0.2em]">
-                {event.category}
-              </span>
               <div className="absolute -top-[3px] -left-[3px] w-2 h-2 border-l border-t border-primary" />
               <div className="absolute -bottom-[3px] -right-[3px] w-2 h-2 border-r border-b border-primary" />
             </div>
@@ -129,7 +130,7 @@ const EventCard = ({ event }: EventCardProps) => {
             <div className="flex items-center gap-2">
               <div className="w-6 h-[1px] bg-primary/40" />
               <span className="text-primary font-mono text-[10px] tracking-widest uppercase">
-                {event.category}
+                Engineering
               </span>
             </div>
           </div>
@@ -141,7 +142,7 @@ const EventCard = ({ event }: EventCardProps) => {
 
           {/* Description */}
           <p className="font-semibold text-md text-white/70 leading-relaxed group-hover:text-primary/80 transition-colors duration-500 line-clamp-3">
-            {event.desc}
+            {event.description}
           </p>
         </div>
 
@@ -163,7 +164,7 @@ const EventCard = ({ event }: EventCardProps) => {
           <div className="flex items-center justify-between">
             <div className="font-mono text-[10px] text-white/20">
               <span className="text-primary">00:00:</span>
-              {String(event.index * 7 + 13).padStart(2, "0")}
+              {String(event.id * 7 + 13).padStart(2, "0")}
             </div>
             <button className="hover:cursor-pointer text-[10px] font-mono text-primary border border-primary/20 px-4 py-2 hover:bg-primary/10 hover:border-primary/50 transition-colors duration-300">
               REGISTER

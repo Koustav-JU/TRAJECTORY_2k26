@@ -1,3 +1,4 @@
+
 export const events = [
     {
         slug: "hydroblasters",
@@ -5,7 +6,9 @@ export const events = [
         title: "HYDROBLASTERS",
         date: "",
         image: "/hydroblasters.webp",
-        description:( <><li>Only registrations submitted within the specified registration period
+        pricepool:"₹5,000",
+        teamSize: "2-3 members from same institute",
+        guidelines:(<><li>Only registrations submitted within the specified registration period
         will be accepted. Late or incomplete registrations will not be
         entertained.</li>
         <li>Teams must strictly adhere to competition guidelines and event
@@ -24,8 +27,8 @@ export const events = [
         institution.</li>
         <li>A participant can join only one team. Multiple registrations will lead
         to disqualification.</li>
-        </>
-        ),
+        </>),
+        description:"Hydroblasters paves the way for an exciting journey to design andconstruct a hig perfromance water rocket, aimed at achieving the maximum range and prescision landing. This event will focus on creating a  stremalimed body to minimize air resitance, featuring an optimised nose cone and stable fins for enhanced stability",
         event_coordinators:(
             <>
             <li><span className="font-semibold">Email:</span> jume.trajectory@gmail.com</li>
@@ -44,23 +47,13 @@ export const events = [
         id: 2,
         title: "CASECOM",
         image: "/hydroblasters.webp",
+        pricepool:"₹6,000",
+        teamSize: "",
         date: "",
+        guidelines:(<></>),
         description: "",
-        guidelines:[
-
-        ],
-        team_structure:[
-
-        ],
-        general_rules:[
-
-        ],
-        problem_statment:[
-
-        ],
-        event_coordinators:[
-
-        ],
+        team_structure:(<></>),
+        event_coordinators:(<></>),
         gdrive:("https://drive.google.com/drive/folders/1z7lCIh-LBqA1c-ZPkbK11Ey9IL3iRHiC"),
         register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
@@ -71,22 +64,12 @@ export const events = [
         title: "EGGSCAGE",
         image: "/hydroblasters",
         date: "",
+        pricepool:"",
+        teamSize: "",
+        guidelines:(<></>),
         description: "",
-        guidelines:[
-
-        ],
-        team_structure:[
-
-        ],
-        general_rules:[
-
-        ],
-        problem_statment:[
-
-        ],
-        event_coordinators:[
-
-        ],
+        team_structure:(<></>),
+        event_coordinators:(<></>),
          gdrive:("https://drive.google.com/drive/folders/120-etzZ2029lUZFpN_ahUQHLn_zkOMJj"),
         register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
@@ -98,21 +81,11 @@ export const events = [
         image: "/hydroblasters",
         date: "",
         description: "",
-        guidelines:[
-
-        ],
-        team_structure:[
-
-        ],
-        general_rules:[
-
-        ],
-        problem_statment:[
-
-        ],
-        event_coordinators:[
-
-        ],
+        guidelines:(<></>),
+        pricepool:"",
+        teamSize: "",
+        team_structure:(<></>),
+        event_coordinators:(<></>),
          gdrive:("https://drive.google.com/drive/folders/10A2Hi0cswhNmtNLryyPxMG8vErrKXkDU"),
         register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
@@ -124,21 +97,11 @@ export const events = [
         image: "/hydroblasters",
         date: "",
         description: "",
-        guidelines:[
-
-        ],
-        team_structure:[
-
-        ],
-        general_rules:[
-
-        ],
-        problem_statment:[
-
-        ],
-        event_coordinators:[
-
-        ],
+        guidelines:(<></>),
+        pricepool:"",
+        teamSize: "",
+        team_structure:(<></>),
+        event_coordinators:(<></>),
          gdrive:("https://drive.google.com/drive/folders/1IZajs678iqtCK4RxjlSs84PdcPM3QlZg"),
         register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
@@ -150,47 +113,27 @@ export const events = [
         image: "/hydroblasters",
         date: "",
         description: "",
-        guidelines:[
-
-        ],
-        team_structure:[
-
-        ],
-        general_rules:[
-
-        ],
-        problem_statment:[
-
-        ],
-        event_coordinators:[
-
-        ],
+        guidelines:(<></>),
+        pricepool:"",
+        teamSize: "",
+        team_structure:(<></>),
+        event_coordinators:(<></>),
          gdrive:("https://drive.google.com/drive/folders/1ramEyfVhfmujngu1YK8lz6D7BzuzwByT"),
         register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
     },
     {
-        slug: "tarkavitarka",
+        slug: "tarkabitorko",
         id: 7,
-        title: "TARKA-VITARKA",
+        title: "TARKA-BITORKO",
         image: "/hydroblasters",
         date: "",
         description: "",
-        guidelines:[
-
-        ],
-        team_structure:[
-
-        ],
-        general_rules:[
-
-        ],
-        problem_statment:[
-
-        ],
-        event_coordinators:[
-
-        ],
+        guidelines:(<></>),
+        pricepool:"",
+        teamSize: "",
+        team_structure:(<></>),
+        event_coordinators:(<></>),
          gdrive:("https://drive.google.com/drive/folders/1v-YzTTIL3oW7u9ayNN6kul1ghKu0j2T0"),
         register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
@@ -202,21 +145,11 @@ export const events = [
         image: "/hydroblasters",
         date: "",
         description: "",
-        guidelines:[
-
-        ],
-        team_structure:[
-
-        ],
-        general_rules:[
-
-        ],
-        problem_statment:[
-
-        ],
-        event_coordinators:[
-
-        ],
+        guidelines:(<></>),
+        pricepool:"",
+        teamSize: "",
+        team_structure:(<></>),
+        event_coordinators:(<></>),
          gdrive:("https://drive.google.com/drive/folders/1F9R1FhEqNbkNyX1KxoMDAZQTFzMx-WvR"),
         register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
@@ -228,22 +161,12 @@ export const events = [
         image: "/hydroblasters",
         date: "",
         description: "",
-        guidelines:[
-
-        ],
-        team_structure:[
-
-        ],
-        general_rules:[
-
-        ],
-        problem_statment:[
-
-        ],
-        event_coordinators:[
-
-        ],
-         gdrive:("https://drive.google.com/drive/folders/1IZajs678iqtCK4RxjlSs84PdcPM3QlZg"),
+        guidelines:(<></>),
+        pricepool:"",
+        teamSize: "",
+        team_structure:(<></>),
+        event_coordinators:(<></>),
+        gdrive:("https://drive.google.com/drive/folders/1IZajs678iqtCK4RxjlSs84PdcPM3QlZg"),
         register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
     },
@@ -254,21 +177,11 @@ export const events = [
         image: "/hydroblasters",
         date: "",
         description: "",
-        guidelines:[
-
-        ],
-        team_structure:[
-
-        ],
-        general_rules:[
-
-        ],
-        problem_statment:[
-
-        ],
-        event_coordinators:[
-
-        ],
+        guidelines:(<></>),
+        pricepool:"",
+        teamSize: "",
+        team_structure:(<></>),
+        event_coordinators:(<></>),
          gdrive:("https://drive.google.com/drive/folders/1IZajs678iqtCK4RxjlSs84PdcPM3QlZg"),
         register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 

@@ -222,6 +222,18 @@ export default function Event ({params,}:{params: Promise<{slug: string}>;}) {
 
     {/* Right Large Section */}
 <div className="md:col-start-2 md:row-span-2 col-start-1 row-start-4 rounded-sm bg-vanta border border-cyan-400/30 backdrop-blur-sm shadow-[0_0_15px_rgba(0,255,255,0.08)] relative flex justify-center items-center">
+{/* Top Left Corner */}
+    <div
+      className="border1 absolute top-3 left-3 w-10 h-7 
+      border-l-4 border-t-4 border-primary/60 shadow-[-8px_-8px_10px_rgba(0,200,255,0.3)]"
+    />
+
+    {/* Bottom Right Corner */}
+    <div
+      className="border2 absolute bottom-3 right-3 w-10 h-7 
+      border-r-4 border-b-4 border-primary/60 shadow-[8px_8px_10px_rgba(0,200,255,0.3)]"
+    />
+
   
   <div
     className="relative h-[95%] w-[95%] rounded-sm p-6 flex flex-col gap-6 "
@@ -235,7 +247,7 @@ export default function Event ({params,}:{params: Promise<{slug: string}>;}) {
       </h2>
 
       <ul className="list-disc pl-5 text-cyan-100/80 text-sm space-y-2">
-        {event.description}
+        {event.guidelines}
       </ul>
     </div>
 
@@ -259,7 +271,7 @@ export default function Event ({params,}:{params: Promise<{slug: string}>;}) {
       </h2>
 
       <p className="text-yellow-300 text-xl font-bold tracking-wide">
-        ₹5,000
+        {event.pricepool}
       </p>
     </div>
 
