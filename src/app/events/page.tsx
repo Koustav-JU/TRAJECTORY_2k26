@@ -6,15 +6,15 @@ import Footer from "@/components/Footer";
 
 const events: EventData[] = [
   {
-    id: "eggscage",
-    title: "EVENT",
+    id: "hydroblasters",
+    title: "HYDROBLASTERS",
     category: "Engineering",
-    desc: "",
+    desc: "Hydroblasters paves the way for an exciting journey to design andconstruct a hig perfromance water rocket, aimed at achieving the maximum range and prescision landing. This event will focus on creating a  stremalimed body to minimize air resitance, featuring an optimised nose cone and stable fins for enhanced stability",
     date: "TBD",
-    teamSize: "TBD",
+    teamSize: "2-3 members, Same Institute",
     color: "#00ffff",
     index: 0,
-    image: "",
+    image: "/hydroblasters.webp",
   },
   {
     id: "casecom",
@@ -28,7 +28,7 @@ const events: EventData[] = [
     image: "",
   },
   {
-    id: "RW-731",
+    id: "eggscage",
     title: "EVENT",
     category: "Engineering",
     desc: "",
@@ -135,7 +135,12 @@ const cardVariants = {
   },
 };
 
-const EventsPage = () => {
+
+
+
+
+export default function EventsPage () {
+
   return (
     <main className="min-h-screen w-full overflow-x-hidden bg-[var(--color-vanta)] pt-28 pb-20">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -192,5 +197,3 @@ const EventsPage = () => {
     </main>
   );
 };
-
-export default EventsPage;

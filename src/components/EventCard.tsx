@@ -4,7 +4,10 @@ import Footer from "@/components/Footer"
 import { motion } from "motion/react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { events } from "@/app/data/events"
+import { useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 export interface EventData {
   id: string;
@@ -45,8 +48,28 @@ const EventCard = ({ event }: EventCardProps) => {
     
   };
 
+
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(()=>{
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(cardRef.current, {
+      opacity: 0,
+      y: 80,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: cardRef.current,
+        start: "top 90%", // animation starts when card enters viewport
+        toggleActions: "play none none none",
+      },
+    });
+  },[]);
+
   return (
     <motion.div
+      ref={cardRef}
       id={event.id}
       onClick={(e)=>handleClick(e.currentTarget)}
       className="group hover:cursor-pointer relative h-[420px] bg-[#0B0F1A] border border-white/5 rounded-none overflow-hidden transition-[border-color,box-shadow] duration-500 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(0,229,255,0.1)]"
@@ -112,12 +135,12 @@ const EventCard = ({ event }: EventCardProps) => {
           </div>
 
           {/* Title */}
-          <h3 className="text-2xl md:text-3xl font-black text-white mb-4 uppercase tracking-tight group-hover:translate-x-2 transition-transform duration-500">
+          <h3 className="text-2xl md:text-3xl font-black text-cyan-100/80 mb-4 uppercase tracking-tight group-hover:translate-x-2 transition-transform duration-500">
             {event.title}
           </h3>
 
           {/* Description */}
-          <p className="text-white/70 text-sm leading-relaxed group-hover:text-primary/80 transition-colors duration-500 line-clamp-3">
+          <p className="font-semibold text-md text-white/70 leading-relaxed group-hover:text-primary/80 transition-colors duration-500 line-clamp-3">
             {event.desc}
           </p>
         </div>
