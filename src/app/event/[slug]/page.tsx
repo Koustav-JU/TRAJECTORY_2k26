@@ -221,7 +221,7 @@ export default function Event ({params,}:{params: Promise<{slug: string}>;}) {
     </div>
 
     {/* Right Large Section */}
-<div className="md:col-start-2 md:row-span-2 col-start-1 row-start-4 rounded-sm bg-vanta border border-cyan-400/30 backdrop-blur-sm shadow-[0_0_15px_rgba(0,255,255,0.08)] relative flex justify-center items-center">
+<div className="md:col-start-2 md:row-span-2 col-start-1 row-start-4 rounded-sm bg-vanta border border-cyan-400/30 backdrop-blur-sm shadow-[0_0_15px_rgba(0,255,255,0.08)] relative flex flex-col justify-center items-center">
 {/* Top Left Corner */}
     <div
       className="border1 absolute top-3 left-3 w-10 h-7 
@@ -234,7 +234,7 @@ export default function Event ({params,}:{params: Promise<{slug: string}>;}) {
       border-r-4 border-b-4 border-primary/60 shadow-[8px_8px_10px_rgba(0,200,255,0.3)]"
     />
 
-  
+  <h1 className="text-3xl font-extrabold text-cyan-200 shadow-[0px_8px_10px_rgba(0,200,255,0.5)]">Event Overview</h1>
   <div
     className="relative h-[95%] w-[95%] rounded-sm p-6 flex flex-col gap-6 "
   >

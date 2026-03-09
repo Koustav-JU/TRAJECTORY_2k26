@@ -31,11 +31,11 @@ export const events = [
         description:"Hydroblasters paves the way for an exciting journey to design andconstruct a hig perfromance water rocket, aimed at achieving the maximum range and prescision landing. This event will focus on creating a  stremalimed body to minimize air resitance, featuring an optimised nose cone and stable fins for enhanced stability",
         event_coordinators:(
             <>
-            <li><span className="font-semibold">Email:</span> jume.trajectory@gmail.com</li>
-            <li><span className="font-semibold">Kaulik Das:</span> Contact: +91 9830669894</li>
-            <li><span className="font-semibold">Ritam Hazra :</span> Contact: +91 9749907545</li>
-            <li><span className="font-semibold">Priyanshu Kumar:</span> Contact: +91 6297445609</li>
-            <li><span className="font-semibold">Priyabrata Majumder:</span> Contact: +91 9903861370</li>
+            <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Email:</span> jume.trajectory@gmail.com</li>
+            <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Kaulik Das:</span> Contact: +91 9830669894</li>
+            <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Ritam Hazra :</span> Contact: +91 9749907545</li>
+            <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Priyanshu Kumar:</span> Contact: +91 6297445609</li>
+            <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Priyabrata Majumder:</span> Contact: +91 9903861370</li>
             </>
         ),
         gdrive:("https://drive.google.com/file/d/17ThkwtID0deaguQpLj16rcD4nBHL8V6p/view"),
