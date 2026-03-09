@@ -30,7 +30,7 @@ const EventCard = ({ event }: EventCardProps) => {
   const router = useRouter();
 
   const handleClick = (e:HTMLDivElement) => {
-    if(1==1){
+    if(!(e.id === "hydroblasters")){
       toast("🚧 Registration opens soon!", {
         duration: 3000,
         style: {
@@ -42,9 +42,9 @@ const EventCard = ({ event }: EventCardProps) => {
       });
       router.push("./coming_soon");
     }
-    // else{
-    //   router.push(`./event/${e.id}`);
-    // }
+    else{
+      router.push(`./event/${e.id}`);
+    }
     
   };
 

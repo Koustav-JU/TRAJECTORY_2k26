@@ -7,14 +7,14 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 export default function Event ({params,}:{params: Promise<{slug: string}>;}) {
   const {slug} = use(params);
   const event = events.find((e)=> e.slug === slug)
 
   const containerRef = useRef<HTMLDivElement>(null)
-  const borderRef1 = useRef<HTMLDivElement>(null)
-  const borderRef2 = useRef<HTMLDivElement>(null)
   const borderRef3 = useRef<HTMLDivElement>(null)
   const toprowRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLDivElement>(null)
@@ -22,26 +22,38 @@ export default function Event ({params,}:{params: Promise<{slug: string}>;}) {
   const underlineRef2 = useRef<HTMLDivElement>(null)
   const underlineRef3 = useRef<HTMLDivElement>(null)
   const headingfooterRef = useRef<HTMLDivElement>(null)
+  const imageRef = useRef<HTMLDivElement>(null)
 
   if(!event) notFound();
+  gsap.registerPlugin(ScrollTrigger);
   
   useGSAP(()=>{
-    gsap.from(borderRef1.current, {
+    gsap.from(".border1", {
       x:500,
       y:60,
       opacity: 0,
       delay: 0.2,
       duration: 0.8,
       ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".border1",      // The element that starts the animation
+        start: "top 85%",         // Animation starts when the TOP of the item hits 85% of the viewport height
+        toggleActions: "play none none none",
+  }
     });
 
-  gsap.from(borderRef2.current, {
+  gsap.from(".border2", {
     x:-500,
     y:-60,
     opacity: 0,
     delay: 0.2,
     duration: 0.8,
     ease: "power2.out",
+    scrollTrigger: {
+        trigger: ".border2",      // The element that starts the animation
+        start: "top 85%",         // Animation starts when the TOP of the item hits 85% of the viewport height
+        toggleActions: "play none none none",
+  }
   });
     gsap.to(borderRef3.current,{
       y: 3,
@@ -83,6 +95,16 @@ export default function Event ({params,}:{params: Promise<{slug: string}>;}) {
     duration:0.8,
     delay:0.5,
     ease:"power2.out",
+  });
+  gsap.from(imageRef.current,{
+    opacity: 0,
+    y: 20,
+    delay: 0.2,
+    duration: 0.5,
+    scrollTrigger:{
+      trigger: imageRef.current,
+      start: "top 85%",
+    }
   })
   },[]);
   
@@ -119,15 +141,13 @@ export default function Event ({params,}:{params: Promise<{slug: string}>;}) {
 
     {/* Top Left Corner */}
     <div
-      ref={borderRef1}
-      className="absolute top-3 left-3 w-10 h-7 
+      className="border1 absolute top-3 left-3 w-10 h-7 
       border-l-4 border-t-4 border-primary/60 shadow-[-8px_-8px_10px_rgba(0,200,255,0.3)]"
     />
 
     {/* Bottom Right Corner */}
     <div
-      ref={borderRef2}
-      className="absolute bottom-3 right-3 w-10 h-7 
+      className="border2 absolute bottom-3 right-3 w-10 h-7 
       border-r-4 border-b-4 border-primary/60 shadow-[8px_8px_10px_rgba(0,200,255,0.3)]"
     />
 
@@ -161,13 +181,25 @@ export default function Event ({params,}:{params: Promise<{slug: string}>;}) {
 
     {/* Left Upper */}
     <div className="relative row-start-2 col-start-1 rounded-sm bg-vanta shadow-[0_0_25px_rgba(0,255,255,0.15)] border-2 border-cyan-400/30 min-h-[300px] flex items-center justify-center">
-      <div className="absolute h-[90%] w-[90%]">
+      <div ref={imageRef} className="absolute h-[90%] w-[90%]">
         <Image
           src={event.image}
           fill
           alt={event.title}
           className="rounded-sm "
           />
+
+          {/* Top Left Corner */}
+    <div
+      className="border1 absolute top-3 left-3 w-10 h-7 
+      border-l-4 border-t-4 border-primary/60 shadow-[-8px_-8px_10px_rgba(0,200,255,0.3)]"
+    />
+
+    {/* Bottom Right Corner */}
+    <div
+      className="border2 absolute bottom-3 right-3 w-10 h-7 
+      border-r-4 border-b-4 border-primary/60 shadow-[8px_8px_10px_rgba(0,200,255,0.3)]"
+    />
     
       </div>
     </div>
@@ -175,15 +207,16 @@ export default function Event ({params,}:{params: Promise<{slug: string}>;}) {
     {/* Left Lower */}
     <div className="row-start-3 col-start-1 rounded-sm border-2 bg-vanta border-emerald-400/30 h-[180px] shadow-[0_0_25px_rgba(0,255,0,0.5)]">
       <div className="relative flex flex-col items-center justify-evenly h-full w-full">
-        <button className="h-15 w-[90%] bg-vanta hover:cursor-pointer border-2 capitalize font-bold text-cyan-500 rounded-sm hover:text-emerald-400/80 transition-all duration-400 ease-in-out hover:scale-102 hover:-translate-y-0.5 hover:shadow-[0px_0px_10px_rgba(0,255,0,0.2)] active:scale-100" style={{
+      <Link href={event.register} className="h-15 w-[90%] bg-vanta hover:cursor-pointer border-2 capitalize font-bold text-cyan-500 rounded-sm hover:text-emerald-400/80 transition-all duration-400 ease-in-out hover:scale-102 hover:-translate-y-0.5 hover:shadow-[0px_0px_10px_rgba(0,255,0,0.2)] active:scale-100 flex items-center justify-center" style={{
     background: "#0f172a",
     border: "2px solid rgba(56,189,248,0.3)",
   }}>
-    Register Now !!! </button>
-        <button className="h-15 w-[90%] bg-vanta hover:cursor-pointer border-2 capitalize font-bold text-cyan-500 rounded-sm transition-all duration-400 ease-in-out hover:scale-102 hover:text-emerald-300/80 hover:shadow-[0px_0px_10px_rgba(0,255,0,0.2)] hover:-translate-y-0.5 active:scale-100" style={{
+    Register Now !!! </Link>
+
+      <Link href={event.gdrive} className="h-15 w-[90%] bg-vanta hover:cursor-pointer border-2 capitalize font-bold text-cyan-500 rounded-sm transition-all duration-400 ease-in-out hover:scale-102 hover:text-emerald-300/80 hover:shadow-[0px_0px_10px_rgba(0,255,0,0.2)] hover:-translate-y-0.5 active:scale-100 flex items-center justify-center" style={{
     background: "#0f172a",
     border: "2px solid rgba(56,189,248,0.3)",
-  }}>Get the Event Details</button>
+  }}>Get the Event Details</Link>
       </div>
     </div>
 

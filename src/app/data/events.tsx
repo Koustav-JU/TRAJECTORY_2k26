@@ -35,6 +35,8 @@ export const events = [
             <li><span className="font-semibold">Priyabrata Majumder:</span> Contact: +91 9903861370</li>
             </>
         ),
+        gdrive:("https://drive.google.com/drive/folders/1IZajs678iqtCK4RxjlSs84PdcPM3QlZg"),
+        register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
     },
     {
@@ -59,6 +61,8 @@ export const events = [
         event_coordinators:[
 
         ],
+        gdrive:("https://drive.google.com/drive/folders/1z7lCIh-LBqA1c-ZPkbK11Ey9IL3iRHiC"),
+        register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
     },
     {
@@ -83,6 +87,8 @@ export const events = [
         event_coordinators:[
 
         ],
+         gdrive:("https://drive.google.com/drive/folders/120-etzZ2029lUZFpN_ahUQHLn_zkOMJj"),
+        register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
     },
     {
@@ -107,6 +113,8 @@ export const events = [
         event_coordinators:[
 
         ],
+         gdrive:("https://drive.google.com/drive/folders/10A2Hi0cswhNmtNLryyPxMG8vErrKXkDU"),
+        register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
     },
     {
@@ -131,6 +139,8 @@ export const events = [
         event_coordinators:[
 
         ],
+         gdrive:("https://drive.google.com/drive/folders/1IZajs678iqtCK4RxjlSs84PdcPM3QlZg"),
+        register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
     },
     {
@@ -155,6 +165,8 @@ export const events = [
         event_coordinators:[
 
         ],
+         gdrive:("https://drive.google.com/drive/folders/1ramEyfVhfmujngu1YK8lz6D7BzuzwByT"),
+        register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
     },
     {
@@ -179,6 +191,8 @@ export const events = [
         event_coordinators:[
 
         ],
+         gdrive:("https://drive.google.com/drive/folders/1v-YzTTIL3oW7u9ayNN6kul1ghKu0j2T0"),
+        register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
     },
     {
@@ -203,6 +217,8 @@ export const events = [
         event_coordinators:[
 
         ],
+         gdrive:("https://drive.google.com/drive/folders/1F9R1FhEqNbkNyX1KxoMDAZQTFzMx-WvR"),
+        register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
     },
     {
@@ -227,6 +243,8 @@ export const events = [
         event_coordinators:[
 
         ],
+         gdrive:("https://drive.google.com/drive/folders/1IZajs678iqtCK4RxjlSs84PdcPM3QlZg"),
+        register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
     },
     {
@@ -251,6 +269,8 @@ export const events = [
         event_coordinators:[
 
         ],
+         gdrive:("https://drive.google.com/drive/folders/1IZajs678iqtCK4RxjlSs84PdcPM3QlZg"),
+        register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
 
     },
 ];
