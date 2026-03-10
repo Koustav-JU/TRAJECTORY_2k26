@@ -34,7 +34,7 @@ const EventCard = ({ event }: EventCardProps) => {
   const router = useRouter();
 
   const handleClick = (e:HTMLDivElement) => {
-    if(!(e.id === "hydroblasters")){
+    if(!(e.id === "hydroblasters" || e.id === "mechapult" || e.id === "casecom")){
       toast("🚧 Registration opens soon!", {
         duration: 3000,
         style: {
@@ -89,13 +89,16 @@ const EventCard = ({ event }: EventCardProps) => {
       </div>
 
       {/* Grid overlay */}
-      <div
-        className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none"
-        style={{
-          backgroundImage: `linear-gradient-55 1px, transparent 1px), linear-gradient(90deg, 1px, transparent 1px)`,
-          backgroundSize: "40px 40px",
-        }}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <img
+        src={event.image}
+        alt="event"
+        className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-all duration-700 group-hover:scale-110"
       />
+
+      {/* Gradient overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#0B0F1A] via-[#0B0F1A]/80 to-transparent" />
+      </div>
 
       {/* Scanline animation */}
       <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">

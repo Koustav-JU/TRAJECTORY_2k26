@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
-const LAUNCH_DATE = new Date("2026-03-23T00:00:00");
+const LAUNCH_DATE = new Date("2026-04-16T00:00:00");
 
 function getTimeLeft() {
   const diff = LAUNCH_DATE.getTime() - Date.now();
