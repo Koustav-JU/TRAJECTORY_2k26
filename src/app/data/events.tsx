@@ -3,6 +3,7 @@ export const events = [
     {
         slug: "hydroblasters",
         id: 1,
+        deadline:"15th April, 2026",
         title: "HYDROBLASTERS",
         date: "15th April 2026",
         image: "/hydroblasters.webp",
@@ -45,6 +46,7 @@ export const events = [
     {
         slug: "casecom",
         id: 2,
+        deadline:"15th April, 2026",
         title: "CASECOM",
         image: "/casecom.webp",
         pricepool:"₹5,000",
@@ -81,6 +83,7 @@ not be entertained.</li>
     {
         slug: "eggscage",
         id: 3,
+        deadline:"15th April, 2026",
         title: "EGGSCAGE",
         image: "/eggscage.webp",
         date: "16th April, 2026",
@@ -113,6 +116,7 @@ not be entertained.</li>
     {
         slug: "mazecraft",
         id: 4,
+        deadline:"15th April, 2026",
         title: "MAZECRAFT",
         image: "/mazecraft.webp",
         date: "TBD",
@@ -144,6 +148,7 @@ not be entertained.</li>
     {
         slug: "roboleague",
         id: 5,
+        deadline:"15th April, 2026",
         title: "ROBOLEAGUE",
         image: "/roboleague.webp",
         date: "TBD",
@@ -175,6 +180,7 @@ not be entertained.</li>
     {
         slug: "modelmatrix",
         id: 6,
+        deadline:"15th April, 2026",
         title: "MODELMATRIX",
         image: "/modelmatrix.webp",
         date: "TBD",
@@ -210,6 +216,7 @@ coordinator’s decision will be final.</li>
     {
         slug: "tarkabitorko",
         id: 7,
+        deadline:"15th April, 2026",
         title: "TARKA-BITORKO",
         image: "/torkobitorko.webp",
         date: "TBD",
@@ -255,6 +262,7 @@ interruptions, and uncivil conduct will lead to penalties or disqualification.</
     {
         slug: "gyanyudh",
         id: 8,
+        deadline:"15th April, 2026",
         title: "GYAN-YUDH",
         image: "/gyanyudh.webp",
         date: "16th & 18th April 2026",
@@ -287,6 +295,7 @@ interruptions, and uncivil conduct will lead to penalties or disqualification.</
     {
         slug: "mechapult",
         id: 9,
+        deadline:"15th April, 2026",
         title: "MECHAPULT",
         image: "/mechapult.webp",
         date: "15th April 2026",
@@ -317,6 +326,7 @@ interruptions, and uncivil conduct will lead to penalties or disqualification.</
     {
         slug: "reelmaking",
         id: 10,
+        deadline:"15th April, 2026",
         title: "REEL-MAKING",
         image: "/hydroblasters",
         date: "",
