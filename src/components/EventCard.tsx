@@ -11,6 +11,7 @@ import { useGSAP } from "@gsap/react";
 
 export interface EventData {
   slug: string,
+  deadline: string,
   id: number,
   title: string,
   image: string,

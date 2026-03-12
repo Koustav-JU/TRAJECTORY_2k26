@@ -63,7 +63,7 @@ export default function Event ({params,}:{params: Promise<{slug: string}>;}) {
       ease:"power2.out"
     });
     gsap.to(titleRef.current, {
-      y:-5,
+      y:0,
       opacity: 1,
       delay: 0.3,
       duration: 0.8,
@@ -168,9 +168,9 @@ export default function Event ({params,}:{params: Promise<{slug: string}>;}) {
       border border-primary/60 bg-emerald-100/20
       px-2 py-1 text-cyan-300 text-sm shadow-[0px_0px_10px_rgba(255,255,255,0.5)]"
     >
-      🔧 Registrations Open
+      🔧 Registrations Open. <br/> Deadline: {event.deadline}
     </div>
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center translate-y-5 md:translate-y-0">
       <div ref={titleRef} className="opacity-0 translate-y-15 relative capitalize font-extrabold text-cyan-100 text-3xl lg:text-4xl text-center">
         <h1>{event.title}</h1> 
       </div>
