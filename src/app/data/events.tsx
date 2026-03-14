@@ -313,7 +313,7 @@ interruptions, and uncivil conduct will lead to penalties or disqualification.</
         <li>No team is allowed to use another team’s catapult.</li>
         </>),
         event_coordinators:(<>
-        <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Email:</span> jume.trajectory@gmail.com</li>
+            <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Email:</span> jume.trajectory@gmail.com</li>
             <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Aniruddho Banerjee:</span> Contact: +91 8697574142 </li>
             <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Antan Saha :</span>  Contact: +91 8585050938</li>
             <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Shamik Pal :</span> Contact: +91 7812068459</li>
@@ -324,20 +324,35 @@ interruptions, and uncivil conduct will lead to penalties or disqualification.</
 
     },
     {
-        slug: "reelmaking",
+        slug: "reelax",
         id: 10,
-        deadline:"15th April, 2026",
-        title: "REEL-MAKING",
-        image: "/hydroblasters",
-        date: "",
-        description: "",
-        guidelines:(<></>),
-        pricepool:"",
-        teamSize: "",
-        team_structure:(<></>),
-        event_coordinators:(<></>),
-         gdrive:("https://drive.google.com/drive/folders/1IZajs678iqtCK4RxjlSs84PdcPM3QlZg"),
-        register:("https://unstop.com/competitions/hydroblasters-trajectory-2026-jadavpur-university-kolkata-1653453"),
+        deadline:"12th April, 2026",
+        title: "REELAX",
+        image: "/reelax.webp",
+        date: "16-18th April, 2026",
+        description: "The Reel Making Competition aims to showcase creativity, storytelling, and technical skills through short-form video content.  Platform Format: Instagram ReelDuration: 30–60 seconds",
+        guidelines:(<>
+        <li>Reel must strictly follow the given themes.</li>
+        <li>Vulgar, abusive, political, or offensive content will lead to disqualification.</li>
+        <li>Avoid plagarism.</li>
+        <li>AI tools are allowed</li>
+        <li>Themes: Anti-Corruption, Conspiracy Theory, The future of AI, Anti-War</li>
+        </>),
+        pricepool:"₹3,000",
+        teamSize: "2-3 Members",
+        team_structure:(<>
+        <li>Open to all students.</li>
+        <li>Team size : 2-3 members</li>
+        <li>Each team can submit only one entry.</li>
+        <li>Multiple entries will lead to disqualification.</li>
+        </>),
+        event_coordinators:(<>
+            <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Email:</span> jume.trajectory@gmail.com</li>
+            <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Ashis Sarkar :</span> Contact: +91 9883541614 </li>
+            <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Arkabrata Das :</span>  Contact: +91 7449432992</li>
+        </>),
+         gdrive:("https://drive.google.com/file/d/1HlRn0qN1HraBmwxXtdbYEndbdq_LLEP1/view?usp=sharing"),
+        register:("https://unstop.com/events/reelax-trajectory-2026-jadavpur-university-kolkata-1657426"),
 
     },
 ];
