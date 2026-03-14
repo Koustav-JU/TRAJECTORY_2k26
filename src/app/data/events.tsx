@@ -1,3 +1,4 @@
+import NotFound from "../not-found";
 
 export const events = [
     {
@@ -353,6 +354,35 @@ interruptions, and uncivil conduct will lead to penalties or disqualification.</
         </>),
          gdrive:("https://drive.google.com/file/d/1HlRn0qN1HraBmwxXtdbYEndbdq_LLEP1/view?usp=sharing"),
         register:("https://unstop.com/events/reelax-trajectory-2026-jadavpur-university-kolkata-1657426"),
+
+    },
+    {
+        slug: "efootballpes",
+        id: 11,
+        deadline:"12th April, 2026",
+        title: "e-Football PES",
+        image: "/efootballpes.webp",
+        date: "TBD",
+        description: "The Mechanical Engineering Department, Jadavpur University, presents the eFootball PES 2026 Tournament as part of Trajectory 2026.",
+        guidelines:(<>
+        <li>The Mechanical Engineering Department, Jadavpur University, presents the eFootball PES 2026 Tournament as part of Trajectory 2026.</li>
+        <li>Compete with the best players on campus and prove your dominance on the virtual pitch.</li>
+        <li>Note: Fixtures and the detailed rulebook will be shared later with all registered participants.</li>
+        </>),
+        pricepool:"TBA",
+        teamSize: "Solo Participation",
+        team_structure:(<>
+        <li>Individual Participation</li>
+        <li>Student from any college is allowed</li>
+        </>),
+        event_coordinators:(<>
+            <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Email:</span> jume.trajectory@gmail.com</li>
+            <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Pabitra Chakraborty :</span> Contact: +91 8167485228 </li>
+            <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Rupankur Mondal :</span>  Contact: +91 7602508567</li>
+            <li className="font-bold text-cyan-500/80"><span className="font-semibold text-cyan-300/80">Samanway Mridha :</span>  Contact: +91 9088087086</li>
+        </>),
+         gdrive:"NotFound",
+        register:("https://unstop.com/p/e-football-pes-2026-trajectory-2026-jadavpur-university-kolkata-1659127"),
 
     },
 ];
